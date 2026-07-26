@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="DatacenterManagement.vcxproj" Id="24b1c2c6-9919-4134-b15a-3227dde410d8" />
+</Solution>

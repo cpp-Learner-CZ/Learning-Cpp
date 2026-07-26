@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37314.3 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Trenink C++", "Trenink C++.vcxproj", "{55D69240-B6CF-40E0-BCC4-A3FA801816BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55D69240-B6CF-40E0-BCC4-A3FA801816BE}.Debug|x64.ActiveCfg = Debug|x64
+		{55D69240-B6CF-40E0-BCC4-A3FA801816BE}.Debug|x64.Build.0 = Debug|x64
+		{55D69240-B6CF-40E0-BCC4-A3FA801816BE}.Debug|x86.ActiveCfg = Debug|Win32
+		{55D69240-B6CF-40E0-BCC4-A3FA801816BE}.Debug|x86.Build.0 = Debug|Win32
+		{55D69240-B6CF-40E0-BCC4-A3FA801816BE}.Release|x64.ActiveCfg = Release|x64
+		{55D69240-B6CF-40E0-BCC4-A3FA801816BE}.Release|x64.Build.0 = Release|x64
+		{55D69240-B6CF-40E0-BCC4-A3FA801816BE}.Release|x86.ActiveCfg = Release|Win32
+		{55D69240-B6CF-40E0-BCC4-A3FA801816BE}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFE6A4DF-07BE-4A8B-9E72-A9E3687AA3C8}
+	EndGlobalSection
+EndGlobal

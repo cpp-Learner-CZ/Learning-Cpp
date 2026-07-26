@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="NetworkDaviceManagement.vcxproj" Id="53f6c2cf-0d1b-44fe-bff7-d248385ea0c9" />
+</Solution>
