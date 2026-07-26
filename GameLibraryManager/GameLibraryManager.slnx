@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="GameLibraryManager.vcxproj" Id="15a5a958-43b9-489d-b955-f906ada089be" />
+</Solution>

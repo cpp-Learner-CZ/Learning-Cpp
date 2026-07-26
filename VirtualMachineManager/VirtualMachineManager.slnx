@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="VirtualMachineManager.vcxproj" Id="cbbba547-23e5-4876-8528-153c91e8662d" />
+</Solution>
