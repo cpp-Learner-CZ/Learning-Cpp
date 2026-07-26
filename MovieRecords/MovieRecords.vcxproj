@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{03a24681-2a96-4398-958e-0110870c76ce}</ProjectGuid>
-    <RootNamespace>RegistrTasks</RootNamespace>
+    <ProjectGuid>{75c76e82-30d0-444e-ad87-f96154fdf683}</ProjectGuid>
+    <RootNamespace>MovieRecords</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="RegistrTasks.cpp" />
+    <ClCompile Include="MovieRecords.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
