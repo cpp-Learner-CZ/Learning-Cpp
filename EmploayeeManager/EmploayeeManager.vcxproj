@@ -141,12 +141,17 @@
   <ItemGroup>
     <ClCompile Include="Data.cpp" />
     <ClCompile Include="EmploayeeManager.cpp" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="EnumOperation.cpp" />
     <ClCompile Include="Verify.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data.hpp" />
+    <ClInclude Include="Employee.hpp" />
+    <ClInclude Include="EnumOperation.hpp" />
     <ClInclude Include="Error.hpp" />
     <ClInclude Include="Verify.hpp" />
+    <ClInclude Include="Version.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

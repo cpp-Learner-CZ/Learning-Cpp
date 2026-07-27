@@ -1,17 +1,25 @@
 ﻿#include <iostream>
 #include <print>
+#include <cstdlib>
 
 #include "Error.hpp"
+#include "Version.hpp"
+#include "Employee.hpp"
+#include "Verify.hpp"
 
 bool programRun = true;
 
-void mainSwitch(int inputSwitch) {
-	switch (inputSwitch)
+//Main switch for selection of functions
+void mainSwitch(int switchChoose) {
+
+	switch (switchChoose)
 	{
 	case 1:
+		add::addEmployee();
 		break;
 
 	case 2:
+		showEmployees();
 		break;
 
 	case 3:
@@ -38,23 +46,19 @@ void mainSwitch(int inputSwitch) {
 	case 10:
 		std::println("Program terminated.");
 		programRun = false;
-		break;
+		exit(0);
 
 	default:
-		std::cerr << error::wrongNumber;
+		std::cerr << error::wrongNumberOrMistake;
 		break;
 	}
-
-
 }
 
 int main()
 {
-	
-	//Main loop
 	while (programRun)
 	{
-		std::println("==== Emploayee manager ====");
+		std::println("\n==== Emploayee manager v{} ====", actualVersion);
 		std::println("1) Add employee");
 		std::println("2) Show employees");
 		std::println("3) Edit employee");
@@ -66,10 +70,14 @@ int main()
 		std::println("9) Export report");
 		std::print("10) Terminate\nChoose: ");
 		int choose;
-		std::cin >> choose;
+		while (!(std::cin >> choose))
+		{
+			std::cerr << error::wrongNumber;
+			std::print("\nChoose: ");
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
 
 		mainSwitch(choose);
 	}
-
-	return 0;
 }
