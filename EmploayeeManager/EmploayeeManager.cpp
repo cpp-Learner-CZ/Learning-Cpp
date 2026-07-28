@@ -23,9 +23,11 @@ void mainSwitch(int switchChoose) {
 		break;
 
 	case 3:
+		edit::lobby();
 		break;
 
 	case 4:
+		//remover::lobby();
 		break;
 
 	case 5:

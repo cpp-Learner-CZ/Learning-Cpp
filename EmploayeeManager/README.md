@@ -20,5 +20,10 @@ Main function(main console window)
 
 ***1.0.0***
 
-Added entire namespace "add"
+Added the entire "add" namespace.
 Added function show employees
+
+***1.1.0***
+
+Added check function for verify first name and last name
+Added the entire "add" namespace.

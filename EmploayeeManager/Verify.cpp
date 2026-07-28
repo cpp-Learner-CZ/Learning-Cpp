@@ -2,6 +2,7 @@
 #include <limits>
 
 #include "Verify.hpp"
+#include "Employee.hpp"
 
 namespace verify {
 	//Check if input is 1-4 true, also false
@@ -18,6 +19,18 @@ namespace verify {
 		if (inputCheck != 0 && inputCheck <= 3)
 		{
 			return true;
+		}
+		return false;
+	}
+
+	//If employee name and surname is alredy exist, return true, else return false
+	bool nameExistVerify(std::string checkFirstName, std::string checkLastName) {
+		for (size_t i = 0; i < employees.size(); i++)
+		{
+			if (employees[i].firstName == checkFirstName && employees[i].lastName == checkLastName)
+			{
+				return true;
+			}
 		}
 		return false;
 	}

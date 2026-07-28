@@ -10,7 +10,7 @@
 
 std::vector<Employee> employees;
 
-//Namespace for add empleyee
+//Namespace for add empleyees
 namespace add {
 	std::string newFirstName;
 	std::string newLastName;
@@ -106,7 +106,213 @@ namespace add {
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 
+		if (verify::nameExistVerify(newFirstName, newLastName))
+		{
+			std::cerr << error::nameIsExist;
+			return;
+		}
+
 		setDepartment();
+	}
+}
+
+//Namespace for edit employees
+namespace edit {
+	std::string chooseFirstName;
+	std::string chooseLastName;
+
+	void editAge() {
+		int newAge;
+		std::println("== Edit age ==");
+		std::print("New age: ");
+		while (!(std::cin >> newAge))
+		{
+			std::cerr << error::wrongNumber;
+			std::print("\nChoose: ");
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		for (size_t i = 0; i < employees.size(); i++)
+		{
+			if (employees[i].firstName == chooseFirstName && employees[i].lastName == chooseLastName)
+			{
+				employees[i].age = newAge;
+				std::println("Age updated.");
+			}
+		}
+	}
+
+	void editSalary() {
+		double newSalary;
+		std::println("== Edit salary ==");
+		std::print("New salary: ");
+		while (!(std::cin >> newSalary))
+		{
+			std::cerr << error::wrongNumber;
+			std::print("\nChoose: ");
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		for (size_t i = 0; i < employees.size(); i++)
+		{
+			if (employees[i].firstName == chooseFirstName && employees[i].lastName == chooseLastName)
+			{
+				employees[i].salary = newSalary;
+				std::println("Salary updated.");
+			}
+		}
+	}
+
+	void editDepartment() {
+		int newDepartment;
+		std::println("== Edit department ==");
+		std::println("1) IT");
+		std::println("2) HR");
+		std::println("3) Finance");
+		std::print("4) Sales\nChoose: ");
+		while (!(std::cin >> newDepartment))
+		{
+			std::cerr << error::wrongNumber;
+			std::print("\nChoose: ");
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		//Verify if user writed 1-4
+		if (!verify::departmentInputIsCompatible(newDepartment))
+		{
+			std::cerr << error::errorInputSetDepartment;
+			return;
+		}
+
+		for (size_t i = 0; i < employees.size(); i++)
+		{
+			if (employees[i].firstName == chooseFirstName && employees[i].lastName == chooseLastName)
+			{
+				employees[i].department = enumOperation::intToDepartment(newDepartment);
+				std::println("Department updated.");
+			}
+		}
+	}
+
+	void editEploymentStatus() {
+		int newEploymentStatus;
+		std::println("== Edit eployment statsu ==");
+		std::println("1) Active");
+		std::println("2) Vacation");
+		std::print("3) Sick leave\nChoose: ");
+		while (!(std::cin >> newEploymentStatus))
+		{
+			std::cerr << error::wrongNumber;
+			std::print("\nChoose: ");
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		//Verify if user writed 1-3
+		if (!verify::employmentStatusIsCompatible(newEploymentStatus))
+		{
+			std::cerr << error::errorInputEmploymentStatus;
+			return;
+		}
+
+		for (size_t i = 0; i < employees.size(); i++)
+		{
+			if (employees[i].firstName == chooseFirstName && employees[i].lastName == chooseLastName)
+			{
+				employees[i].employmentStatus = enumOperation::intToEmploymentStatus(newEploymentStatus);
+				std::println("Employment status updated.");
+			}
+		}
+	}
+
+	void chooseEditOperation(int chooseEdit) {
+		switch (chooseEdit)
+		{
+		case 1:
+			editAge();
+			break;
+
+		case 2:
+			editSalary();
+			break;
+
+		case 3:
+			editDepartment();
+			break;
+
+		case 4:
+			editEploymentStatus();
+			break;
+
+		case 5:
+			break;
+
+		default:
+			std::cerr << error::mistakeNumberEdit;
+			break;
+		}
+	}
+
+	//Main enter for edit employees
+	void editMainChoose() {
+		int editChoose;
+		std::println("=== Edit employee ===");
+		std::println("1) Age");
+		std::println("2) Salary");
+		std::println("3) Department");
+		std::println("4) Employment status");
+		std::print("5) Back\nChoose: ");
+		while (!(std::cin >> editChoose))
+		{
+			std::cerr << error::wrongNumber;
+			std::print("\nChoose: ");
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		chooseEditOperation(editChoose);
+	}
+
+	void lobby() {
+		std::println("=== Edit employee ===");
+		std::print("Write first name for edit: ");
+		std::getline(std::cin >> std::ws, chooseFirstName);
+
+		std::print("Write last name for edit: ");
+		std::getline(std::cin >> std::ws, chooseLastName);
+
+		if (!verify::nameExistVerify(chooseFirstName, chooseLastName))
+		{
+			std::cerr << error::nameIsntExist;
+			return;
+		}
+
+		editMainChoose();
+	}
+}
+
+//Namespace for remove employees
+namespace remover {
+	std::string remFirstName;
+	std::string remLastName;
+
+	void lobby() {
+		std::println("=== Remove employee ===");
+		std::print("Write first name for remove: ");
+		std::getline(std::cin >> std::ws, remFirstName);
+
+		std::print("Write last name for remove: ");
+		std::getline(std::cin >> std::ws, remLastName);
+
+		if (!verify::nameExistVerify(remFirstName, remLastName));
+		{
+			std::cerr << error::nameIsntExist;
+			return;
+		}
+		//The entire remove function will be added later.
 	}
 }
 

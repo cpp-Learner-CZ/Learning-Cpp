@@ -39,9 +39,19 @@ public:
 
 extern std::vector<Employee> employees;
 
-//Namespace for add empleyee
+//Namespace for add empleyees
 namespace add {
 	void addEmployee();
+}
+
+//Namespace for edit employees
+namespace edit {
+	void lobby();
+}
+
+//Namespace for remove employees
+namespace remover {
+	void lobby();
 }
 
 void showEmployees();
