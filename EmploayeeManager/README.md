@@ -1,6 +1,6 @@
 # Learning C++ Console app: Uncompleted
 
-**This file is use only for train C++**
+**This file is use only for train C++.**
 
 ### This training project will not be updated
 
@@ -10,20 +10,25 @@
 
 # How to run
 
-Open the project in Visual Studio and build the solution 
+Open the project in Visual Studio and build the solution.
 
 # Version history
 
 ***0.1.0***
 
-Main function(main console window)
+Main function(main console window).
 
 ***1.0.0***
 
-Added the entire "add" namespace.
-Added function show employees
+Added the entire "add" namespace.  
+Added function show employees.
 
 ***1.1.0***
 
-Added check function for verify first name and last name
+Added check function for verify first name and last name.  
 Added the entire "add" namespace.
+
+***1.2.0***
+
+Added the entire "remover" namespace.
+Added the entire "search" namespace.

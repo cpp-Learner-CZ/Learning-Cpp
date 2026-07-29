@@ -6,6 +6,8 @@
 #include "Version.hpp"
 #include "Employee.hpp"
 #include "Verify.hpp"
+#include "Search.hpp"
+#include "Filter.hpp"
 
 bool programRun = true;
 
@@ -27,10 +29,11 @@ void mainSwitch(int switchChoose) {
 		break;
 
 	case 4:
-		//remover::lobby();
+		remover::lobby();
 		break;
 
 	case 5:
+		search::lobby();
 		break;
 
 	case 6:

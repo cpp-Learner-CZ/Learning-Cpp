@@ -299,20 +299,46 @@ namespace remover {
 	std::string remFirstName;
 	std::string remLastName;
 
+	void removed() {
+		for (size_t i = 0; i < employees.size(); i++)
+		{
+			if (employees[i].firstName == remFirstName && employees[i].lastName == remLastName)
+			{
+				employees.erase(employees.begin() + i);
+				std::println("Employee removed.");
+			}
+		}
+	}
+
+	void consentRemove() {
+		std::print("Are you sure for remove employee with:\n-first name: {}\n-last name: {}\nWrite y or n: ", remFirstName, remLastName);
+		std::string constentYesNo;
+		std::getline(std::cin >> std::ws, constentYesNo);
+		bool consentBool = (constentYesNo == "y" || constentYesNo == "Y");
+
+		if (!consentBool)
+		{
+			std::println("Remove canceled.");
+			return;
+		}
+		removed();
+	}
+
+	//Main enter function for remove
 	void lobby() {
 		std::println("=== Remove employee ===");
 		std::print("Write first name for remove: ");
 		std::getline(std::cin >> std::ws, remFirstName);
-
+		
 		std::print("Write last name for remove: ");
 		std::getline(std::cin >> std::ws, remLastName);
 
-		if (!verify::nameExistVerify(remFirstName, remLastName));
+		if (!verify::nameExistVerify(remFirstName, remLastName))
 		{
 			std::cerr << error::nameIsntExist;
 			return;
 		}
-		//The entire remove function will be added later.
+		consentRemove();
 	}
 }
 
