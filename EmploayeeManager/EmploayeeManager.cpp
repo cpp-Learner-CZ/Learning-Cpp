@@ -8,6 +8,9 @@
 #include "Verify.hpp"
 #include "Search.hpp"
 #include "Filter.hpp"
+#include "Sorter.hpp"
+#include "Statistics.hpp"
+#include "Data.hpp"
 
 bool programRun = true;
 
@@ -37,12 +40,15 @@ void mainSwitch(int switchChoose) {
 		break;
 
 	case 6:
+		filter::lobby();
 		break;
 
 	case 7:
+		sorter::lobby();
 		break;
 
 	case 8:
+		statistics::lobby();
 		break;
 
 	case 9:

@@ -32,3 +32,9 @@ Added the entire "add" namespace.
 
 Added the entire "remover" namespace.
 Added the entire "search" namespace.
+
+***1.3.0***
+
+Added the entire "filter" namespace.  
+Added the entire "sorter" namespace.  
+Added the entire "statistics" namespace.  

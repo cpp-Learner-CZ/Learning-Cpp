@@ -146,6 +146,7 @@
     <ClCompile Include="Filter.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="Sorter.cpp" />
+    <ClCompile Include="Statistics.cpp" />
     <ClCompile Include="Verify.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="Filter.hpp" />
     <ClInclude Include="Search.hpp" />
     <ClInclude Include="Sorter.hpp" />
+    <ClInclude Include="Statistics.hpp" />
     <ClInclude Include="Verify.hpp" />
     <ClInclude Include="Version.hpp" />
   </ItemGroup>
