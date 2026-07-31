@@ -34,4 +34,22 @@ namespace verify {
 		}
 		return false;
 	}
+
+	//If age are bigger or equal 18, function return true.
+	bool verifyIfAgeBiggerthan18(int verifyAge) {
+		if (verifyAge >= 18)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	//Function returns true, if salary not equals 0.
+	bool salaryIs0(int salary) {
+		if (salary != 0)
+		{
+			return true;
+		}
+		return false;
+	}
 }

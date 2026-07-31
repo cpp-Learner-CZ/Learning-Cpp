@@ -16,7 +16,6 @@ bool programRun = true;
 
 //Main switch for selection of functions
 void mainSwitch(int switchChoose) {
-
 	switch (switchChoose)
 	{
 	case 1:
@@ -51,12 +50,16 @@ void mainSwitch(int switchChoose) {
 		statistics::lobby();
 		break;
 
-	case 9:
+	case 9: {
+		//Employee employee;
+		//employee.showLogs();
 		break;
+	    }
 
 	case 10:
 		std::println("Program terminated.");
 		programRun = false;
+		fileActions::saveData();
 		exit(0);
 
 	default:
@@ -67,6 +70,7 @@ void mainSwitch(int switchChoose) {
 
 int main()
 {
+	fileActions::loadData();
 	while (programRun)
 	{
 		std::println("\n==== Emploayee manager v{} ====", actualVersion);

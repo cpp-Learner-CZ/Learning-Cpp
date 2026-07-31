@@ -8,7 +8,19 @@
 #include "Error.hpp"
 #include "EnumOperation.hpp"
 
+//Function for show logs
+void Employee::showLogs() {
+	std::println("=== Show logs ===");
+	for (size_t i = 0; i < logsVector.size(); i++)
+	{
+		std::cout << logsVector[i].report << "\n";
+	}
+}
+
 std::vector<Employee> employees;
+
+//Vector for logs
+std::vector<logStruct> logsVector;
 
 //Namespace for add empleyees
 namespace add {
@@ -22,6 +34,7 @@ namespace add {
 	void save() {
 		employees.emplace_back(newFirstName, newLastName, newAge, newSalary, newDepartment, newEmploymentStatus);
 		std::println("Employee added.");
+		logsVector.emplace_back("[INFO] Employee added.");
 	}
 
 	void setEmploymentStatus() {
@@ -33,11 +46,11 @@ namespace add {
 		int chooseDeploymentStatus;
 		while (!(std::cin >> chooseDeploymentStatus))
 		{
+			logsVector.emplace_back("[Error] " + error::wrongNumber);
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			return;
 		}
 
 		//Verify if user writed 1-3
@@ -112,6 +125,18 @@ namespace add {
 			return;
 		}
 
+		if (!verify::verifyIfAgeBiggerthan18(newAge))
+		{
+			std::cerr << error::wrongAge;
+			return;
+		}
+
+		if (!verify::salaryIs0(newSalary))
+		{
+			std::cerr << error::wrongSalary;
+			return;
+		}
+
 		setDepartment();
 	}
 }
@@ -131,6 +156,12 @@ namespace edit {
 			std::print("\nChoose: ");
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		if (!verify::verifyIfAgeBiggerthan18(newAge))
+		{
+			std::cerr << error::wrongAge;
+			return;
 		}
 
 		for (size_t i = 0; i < employees.size(); i++)
@@ -153,6 +184,12 @@ namespace edit {
 			std::print("\nChoose: ");
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		if (!verify::salaryIs0(newSalary))
+		{
+			std::cerr << error::wrongSalary;
+			return;
 		}
 
 		for (size_t i = 0; i < employees.size(); i++)

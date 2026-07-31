@@ -17,6 +17,11 @@ enum class EmploymentStatus
 	SickLeave = 3
 };
 
+struct logStruct {
+	std::string report;
+};
+extern std::vector<logStruct> logsVector;
+
 //Main class definition for easy use with vector
 class Employee {
 public:
@@ -27,6 +32,8 @@ public:
 	Department department;
 	EmploymentStatus employmentStatus;
 
+	Employee() {}
+
 	Employee(std::string f, std::string l, int a, double s, Department d, EmploymentStatus e) {
 		firstName = f;
 		lastName = l;
@@ -35,6 +42,8 @@ public:
 		department = d;
 		employmentStatus = e;
 	}
+
+     void showLogs();
 };
 
 extern std::vector<Employee> employees;

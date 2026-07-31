@@ -9,4 +9,10 @@ namespace verify {
 
 	//If employee name and surname is alredy exist, return true, else return false
 	bool nameExistVerify(std::string checkFirstName, std::string checkLastName);
+
+	//If age are bigger or equal 18, function return true.
+	bool verifyIfAgeBiggerthan18(int verifyAge);
+
+	//Function returns true, if salary not equals 0.
+	bool salaryIs0(int salary);
 }

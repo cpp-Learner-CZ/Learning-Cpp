@@ -1,12 +1,25 @@
 # Learning C++ Console app: Uncompleted
 
-**This file is use only for train C++.**
+**This file is use only for train C++**
 
 ### This training project will not be updated
 
 ## Used C++ Vector, String, bool, sort, class, print, namespace, enum class, work with .cpp and .hpp
 
-**New: Check input from int and boolean**
+**New: Check input from int and boolean, later used new error type.**
+
+# Functions
+
+- Add employee
+- Show employees
+- Edit employee
+- Remove employee
+- Search employee
+- Filter
+- Sort
+- Statistics
+- Export report
+- Save and load
 
 # How to run
 
@@ -38,3 +51,8 @@ Added the entire "search" namespace.
 Added the entire "filter" namespace.  
 Added the entire "sorter" namespace.  
 Added the entire "statistics" namespace.  
+
+***1.4.0***
+
+Added function for save data.  
+Added fenction for load data.  
