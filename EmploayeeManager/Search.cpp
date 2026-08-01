@@ -33,6 +33,7 @@ namespace search {
 		}
 		if (!founded)
 		{
+			logsVector.emplace_back("[Warning] This name isn't exist.");
 			std::cerr << error::nameIsntExist;
 		}
 	}
@@ -60,6 +61,7 @@ namespace search {
 		}
 		if (!founded)
 		{
+			logsVector.emplace_back("[Warning] This name isn't exist.");
 			std::cerr << error::nameIsntExist;
 		}
 	}
@@ -74,6 +76,7 @@ namespace search {
 		int chooseSearchDepartment;
 		while (!(std::cin >> chooseSearchDepartment))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 
@@ -83,6 +86,7 @@ namespace search {
 
 		if (!verify::departmentInputIsCompatible(chooseSearchDepartment))
 		{
+			logsVector.emplace_back("[Warning] Wrote number zero or number bigger than four.");
 			std::cerr << error::errorInputSetDepartment;
 			return;
 		}
@@ -102,10 +106,12 @@ namespace search {
 				std::println("Department: {}", enumOperation::enumDepartmentToString(employees[i].department));
 				std::println("Employment satus: {}", enumOperation::enumEmploymentStatusToString(employees[i].employmentStatus));
 				std::println();
+				logsVector.emplace_back("[INFO] Employee found.");
 			}
 		}
 		if (!founded)
 		{
+			logsVector.emplace_back("[Warning] This department isn't have employee.");
 			std::cerr << error::nameIsntExist;
 		}
 	}
@@ -129,6 +135,7 @@ namespace search {
 			break;
 
 		default:
+			logsVector.emplace_back("[Warning] Wrote a number zero or a number bigger than five.");
 			std::cerr << error::wrongNumberOrMistake;
 			break;
 		}
@@ -145,6 +152,7 @@ namespace search {
 
 		while (!(std::cin >> chooseSearch_))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 

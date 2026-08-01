@@ -142,6 +142,7 @@ namespace filter {
 			break;
 
 		default:
+			logsVector.emplace_back("[Warning] Wrote the number zero or a number bigger than seven.");
 			std::cerr << error::wrongNumberOrMistake;
 			lobby();
 			break;
@@ -161,6 +162,7 @@ namespace filter {
 		int chooseFilter;
 		while (!(std::cin >> chooseFilter))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 

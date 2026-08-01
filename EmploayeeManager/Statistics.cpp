@@ -140,6 +140,7 @@ namespace statistics {
 		//This if block checks if the vector is not empty. Without it, the program would crash.
 		if (employees.size() == 0)
 		{
+			logsVector.emplace_back("[Error] Can't load statistics because the employee list is empty.");
 			std::cerr << "ERROR: Cannot load statistics because the employee list is empty!";
 			return;
 		}

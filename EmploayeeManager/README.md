@@ -1,12 +1,12 @@
-# Learning C++ Console app: Uncompleted
+# Learning C++ Console app
 
 **This file is use only for train C++**
 
 ### This training project will not be updated
 
-## Used C++ Vector, String, bool, sort, class, print, namespace, enum class, work with .cpp and .hpp
+## Used C++ Vector, String, bool, sort, class, print, namespace, enum class, work with .cpp and .hpp, struct
 
-**New: Check input from int and boolean, later used new error type.**
+**New: Check input from int and boolean, later used new error type and added logs.**
 
 # Functions
 
@@ -18,7 +18,7 @@
 - Filter
 - Sort
 - Statistics
-- Export report
+- Export logs
 - Save and load
 
 # How to run
@@ -56,3 +56,8 @@ Added the entire "statistics" namespace.
 
 Added function for save data.  
 Added fenction for load data.  
+
+***1.5.0***
+
+Added std::vector with logs.  
+This is final version.

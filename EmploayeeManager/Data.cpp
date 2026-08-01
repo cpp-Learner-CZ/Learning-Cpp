@@ -15,6 +15,7 @@ namespace fileActions {
 		std::ofstream writer(fileName);
 		if (!writer.is_open())
 		{
+			logsVector.emplace_back("[Error] Can't save data.");
 			writer.close();
 			std::cerr << error::fileWriteError;
 			return;
@@ -37,6 +38,7 @@ namespace fileActions {
 
 		writer.close();
 		std::println("Save completed, terminating program...");
+		logsVector.emplace_back("[INFO] Save completed.");
 	}
 
 	void loadData() {
@@ -44,6 +46,7 @@ namespace fileActions {
 		std::ifstream loader(fileName);
 		if (!loader.is_open())
 		{
+			logsVector.emplace_back("[Error] Can't load data.");
 			loader.close();
 			std::cerr << error::fileLoadError;
 			return;
@@ -78,5 +81,6 @@ namespace fileActions {
 
 		loader.close();
 		std::println("Load completed.");
+		logsVector.emplace_back("[INFO] Load completed.");
 	}
 }

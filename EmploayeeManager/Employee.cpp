@@ -46,7 +46,7 @@ namespace add {
 		int chooseDeploymentStatus;
 		while (!(std::cin >> chooseDeploymentStatus))
 		{
-			logsVector.emplace_back("[Error] " + error::wrongNumber);
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
@@ -56,6 +56,7 @@ namespace add {
 		//Verify if user writed 1-3
 		if (!verify::employmentStatusIsCompatible(chooseDeploymentStatus))
 		{
+			logsVector.emplace_back("[Warning] Wrote number zero or number bigger than three.");
 			std::cerr << error::errorInputEmploymentStatus;
 			return;
 		}
@@ -74,6 +75,7 @@ namespace add {
 		int chooseDepartment;
 		while (!(std::cin >> chooseDepartment))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
@@ -84,6 +86,7 @@ namespace add {
 		//Verify if user writed 1-4
 		if (!verify::departmentInputIsCompatible(chooseDepartment))
 		{
+			logsVector.emplace_back("[Warning] Wrote number zero or number bigger than four.");
 			std::cerr << error::errorInputSetDepartment;
 			return;
 		}
@@ -104,6 +107,7 @@ namespace add {
 		std::print("Write employee age: ");
 		while (!(std::cin >> newAge))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
@@ -113,6 +117,7 @@ namespace add {
 		std::print("Write employee salary: ");
 		while (!(std::cin >> newSalary))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
@@ -121,18 +126,21 @@ namespace add {
 
 		if (verify::nameExistVerify(newFirstName, newLastName))
 		{
+			logsVector.emplace_back("[Warning] Add employee canceled because employee is alredy exist.");
 			std::cerr << error::nameIsExist;
 			return;
 		}
 
 		if (!verify::verifyIfAgeBiggerthan18(newAge))
 		{
+			logsVector.emplace_back("[Warning] Age is lower than eightenn.");
 			std::cerr << error::wrongAge;
 			return;
 		}
 
 		if (!verify::salaryIs0(newSalary))
 		{
+			logsVector.emplace_back("[Warning] Salary is equals zero.");
 			std::cerr << error::wrongSalary;
 			return;
 		}
@@ -152,6 +160,7 @@ namespace edit {
 		std::print("New age: ");
 		while (!(std::cin >> newAge))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
@@ -160,6 +169,7 @@ namespace edit {
 
 		if (!verify::verifyIfAgeBiggerthan18(newAge))
 		{
+			logsVector.emplace_back("[Warning] Age is lower than eighteen.");
 			std::cerr << error::wrongAge;
 			return;
 		}
@@ -170,6 +180,7 @@ namespace edit {
 			{
 				employees[i].age = newAge;
 				std::println("Age updated.");
+				logsVector.emplace_back("[INFO] Age updated.");
 			}
 		}
 	}
@@ -180,6 +191,7 @@ namespace edit {
 		std::print("New salary: ");
 		while (!(std::cin >> newSalary))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
@@ -188,6 +200,7 @@ namespace edit {
 
 		if (!verify::salaryIs0(newSalary))
 		{
+			logsVector.emplace_back("[Warning] Salary is equal zero.");
 			std::cerr << error::wrongSalary;
 			return;
 		}
@@ -198,6 +211,7 @@ namespace edit {
 			{
 				employees[i].salary = newSalary;
 				std::println("Salary updated.");
+				logsVector.emplace_back("[INFO] Salary updated.");
 			}
 		}
 	}
@@ -211,6 +225,7 @@ namespace edit {
 		std::print("4) Sales\nChoose: ");
 		while (!(std::cin >> newDepartment))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
@@ -220,6 +235,7 @@ namespace edit {
 		//Verify if user writed 1-4
 		if (!verify::departmentInputIsCompatible(newDepartment))
 		{
+			logsVector.emplace_back("[Warning] Wrote number zero or number bigger than four.");
 			std::cerr << error::errorInputSetDepartment;
 			return;
 		}
@@ -230,6 +246,7 @@ namespace edit {
 			{
 				employees[i].department = enumOperation::intToDepartment(newDepartment);
 				std::println("Department updated.");
+				logsVector.emplace_back("[Warning] Department updated.");
 			}
 		}
 	}
@@ -242,6 +259,7 @@ namespace edit {
 		std::print("3) Sick leave\nChoose: ");
 		while (!(std::cin >> newEploymentStatus))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
@@ -251,6 +269,7 @@ namespace edit {
 		//Verify if user writed 1-3
 		if (!verify::employmentStatusIsCompatible(newEploymentStatus))
 		{
+			logsVector.emplace_back("[Warning] Wrote number zero or number bigger than three.");
 			std::cerr << error::errorInputEmploymentStatus;
 			return;
 		}
@@ -261,6 +280,7 @@ namespace edit {
 			{
 				employees[i].employmentStatus = enumOperation::intToEmploymentStatus(newEploymentStatus);
 				std::println("Employment status updated.");
+				logsVector.emplace_back("[INFO] Employment status epdated.");
 			}
 		}
 	}
@@ -288,6 +308,7 @@ namespace edit {
 			break;
 
 		default:
+			logsVector.emplace_back("[Warning] Writed number zero or number bigger than five.");
 			std::cerr << error::mistakeNumberEdit;
 			break;
 		}
@@ -304,6 +325,7 @@ namespace edit {
 		std::print("5) Back\nChoose: ");
 		while (!(std::cin >> editChoose))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
@@ -323,6 +345,7 @@ namespace edit {
 
 		if (!verify::nameExistVerify(chooseFirstName, chooseLastName))
 		{
+			logsVector.emplace_back("[Warning] This name isn't exist.");
 			std::cerr << error::nameIsntExist;
 			return;
 		}
@@ -343,6 +366,7 @@ namespace remover {
 			{
 				employees.erase(employees.begin() + i);
 				std::println("Employee removed.");
+				logsVector.emplace_back("[INFO] Employee removed.");
 			}
 		}
 	}
@@ -355,6 +379,7 @@ namespace remover {
 
 		if (!consentBool)
 		{
+			logsVector.emplace_back("[INFO] Remove canceled.");
 			std::println("Remove canceled.");
 			return;
 		}
@@ -372,6 +397,7 @@ namespace remover {
 
 		if (!verify::nameExistVerify(remFirstName, remLastName))
 		{
+			logsVector.emplace_back("[Warning] This name isn't exist.");
 			std::cerr << error::nameIsntExist;
 			return;
 		}
@@ -394,5 +420,6 @@ void showEmployees() {
 	if (employees.size() == 0)
 	{
 		std::println("No employees found.");
+		logsVector.emplace_back("[INFO] No employees found.");
 	}
 }

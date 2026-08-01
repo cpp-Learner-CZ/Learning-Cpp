@@ -45,32 +45,38 @@ namespace sorter {
 		case 1:
 			sortFirstName();
 			std::println("Sorted.");
+			logsVector.emplace_back("[INFO] Sorted by first name.");
 			break;
 
 		case 2:
 			sortLastName();
 			std::println("Sorted.");
+			logsVector.emplace_back("[INFO] Sorted by last name.");
 			break;
 
 		case 3:
 			sortAge();
 			std::println("Sorted.");
+			logsVector.emplace_back("[INFO] Sorted by age.");
 			break;
 
 		case 4:
 			sortSalary();
 			std::println("Sorted.");
+			logsVector.emplace_back("[INFO] Sorted by salary.");
 			break;
 
 		case 5:
 			sortDepartment();
 			std::println("Sorted.");
+			logsVector.emplace_back("[INFO] Sorted by department.");
 			break;
 
 		case 6:
 			break;
 
 		default:
+			logsVector.emplace_back("[Warning] Wrote a number zero or number bigger than six.");
 			std::cerr << error::wrongNumberOrMistake;
 			lobby();
 			break;
@@ -88,6 +94,7 @@ namespace sorter {
 		std::print("6) Back\nChoose: ");
 		int sortChoose;
 		while (!(std::cin >> sortChoose)) {
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nPrint: ");
 

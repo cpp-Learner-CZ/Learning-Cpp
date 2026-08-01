@@ -51,8 +51,8 @@ void mainSwitch(int switchChoose) {
 		break;
 
 	case 9: {
-		//Employee employee;
-		//employee.showLogs();
+		Employee employee;
+		employee.showLogs();
 		break;
 	    }
 
@@ -64,6 +64,7 @@ void mainSwitch(int switchChoose) {
 
 	default:
 		std::cerr << error::wrongNumberOrMistake;
+		logsVector.emplace_back("[Warning] Wrote number zero or number bigger than ten.");
 		break;
 	}
 }
@@ -87,6 +88,7 @@ int main()
 		int choose;
 		while (!(std::cin >> choose))
 		{
+			logsVector.emplace_back("[Warning] Wrote a letter instead of a number.");
 			std::cerr << error::wrongNumber;
 			std::print("\nChoose: ");
 			std::cin.clear();
