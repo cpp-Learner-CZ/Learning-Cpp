@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="WarehouseManager_v2.vcxproj" Id="efa193d6-02e6-47f7-92d4-f36481d693f4" />
+</Solution>
