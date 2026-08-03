@@ -11,7 +11,8 @@
 # Functions
 
 - Add product
-<!-- - Show products- Edit product- Remove product- Search product- Filter- Sort- Statistics- Logs- Export logs- Save and load-->
+- Show products
+<!-- - Edit product- Remove product- Search product- Filter- Sort- Statistics- Logs- Export logs- Save and load-->
 
 # How to run
 
@@ -22,5 +23,9 @@ Open the project in Visual Studio and build the solution.
 ***1.0.0***
 
 Program core.  
-Added function add product.  
-Added function show products.  
+Function to add a product has been added.  
+Function to show products has been added.  
+
+***1.0.1***
+
+Corrected outdated descriptions and fixed typos.  
