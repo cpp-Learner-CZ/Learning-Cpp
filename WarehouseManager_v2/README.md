@@ -6,13 +6,14 @@
 
 ## Used C++ Vector, String, bool, sort, print, namespace, enum class, work with .cpp and .hpp, struct, class
 
-**More work with class**
+**New: More work with class**
 
 # Functions
 
 - Add product
 - Show products
-<!-- - Edit product- Remove product- Search product- Filter- Sort- Statistics- Logs- Export logs- Save and load-->
+- Edit product 
+<!-- - Delete product- Search product- Filter- Sort- Statistics- Logs- Export logs- Save and load-->
 
 # How to run
 
@@ -29,3 +30,7 @@ Function to show products has been added.
 ***1.0.1***
 
 Corrected outdated descriptions and fixed typos.  
+
+***1.1.0***
+
+Added product editing capability (excluding price).

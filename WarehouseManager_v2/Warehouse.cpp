@@ -19,6 +19,64 @@ void Product::showProduct(int iterator) {
 	std::println("----------------------------");
 }
 
+bool Product::updateName(std::string& chooseName, std::string& newName) {
+	for (size_t i = 0; i < productList.size(); i++)
+	{
+		if (chooseName == productList[i].name)
+		{
+			productList[i].name = newName;
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Product::addStock(std::string& chooseName, int& addStock) {
+	for (size_t i = 0; i < productList.size(); i++)
+	{
+		if (chooseName == productList[i].name)
+		{
+			if (verify::quantityIs0(addStock))
+			{
+				std::cerr << error::quantityIs0;
+				logAction.emplace_back(logs::logQuantityIs0);
+				return false;
+			}
+			productList[i].quantity += addStock;
+			logAction.emplace_back(logs::logAddStockCompleted);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Product::removeStock(std::string& chooseName, int& removeStock) {
+	for (size_t i = 0; i < productList.size(); i++)
+	{
+		if (chooseName == productList[i].name)
+		{
+			if (verify::quantityIs0(removeStock))
+			{
+				std::cerr << error::quantityIs0;
+				logAction.emplace_back(logs::logQuantityIs0);
+				return false;
+			}
+
+			if (!verify::intIsEqualOrLower(productList[i].quantity, removeStock))
+			{
+				std::cerr << error::stockRemoveIntBigger;
+				logAction.emplace_back(logs::logRemoveStockErrorIntBigger);
+				return false;
+			}
+
+			productList[i].quantity -= removeStock;
+			logAction.emplace_back(logs::logRemoveStockCompleted);
+			return true;
+		}
+	}
+	return false;
+}
+
 namespace add {
 	std::string newName;
 	int newQuantity;

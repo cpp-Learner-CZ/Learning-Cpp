@@ -36,6 +36,11 @@ public:
 
 	void showProduct(int iterator);
 
+	bool updateName(std::string& chooseName, std::string& newName);
+
+	bool addStock(std::string& chooseName, int& addStock);
+
+	bool removeStock(std::string& chooseName, int& removeStock);
 };
 
 extern std::vector<Product> productList;

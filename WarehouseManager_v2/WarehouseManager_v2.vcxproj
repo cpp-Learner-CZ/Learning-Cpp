@@ -139,6 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EnumOperation.cpp" />
     <ClCompile Include="Verify.cpp" />
     <ClCompile Include="Warehouse.cpp" />
@@ -148,6 +149,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Editor.hpp" />
     <ClInclude Include="EnumOperation.hpp" />
     <ClInclude Include="ErrorOrLogs.hpp" />
     <ClInclude Include="Verify.hpp" />

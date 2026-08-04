@@ -12,4 +12,7 @@ namespace verify {
 
 	//If integer equals bigger than five or zero, return false, else return true.
 	bool enumInputIsOK(const int& input);
+
+	//If integer 'check' equals to 'size' or lower than integer 'size', return true, else return false.
+	bool intIsEqualOrLower(const int& size, const int& check);
 }

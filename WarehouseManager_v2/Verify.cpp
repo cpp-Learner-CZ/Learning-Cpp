@@ -42,4 +42,13 @@ namespace verify {
 		}
 		return false;
 	}
+
+	//If integer 'check' equals to 'size' or lower than integer 'size', return true, else return false.
+	bool intIsEqualOrLower(const int& size, const int& check) {
+		if (size >= check)
+		{
+			return true;
+		}
+		return false;
+	}
 }

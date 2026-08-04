@@ -6,6 +6,7 @@
 #include "Warehouse.hpp"
 #include "Version.hpp"
 #include "ErrorOrLogs.hpp"
+#include "Editor.hpp"
 
 bool runProgram = true;
 
@@ -22,6 +23,7 @@ void mainSwitch(int& choose) {
         break;
 
     case 3:
+        editProduct::lobby();
         break;
 
     case 4:
