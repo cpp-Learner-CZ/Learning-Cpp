@@ -7,9 +7,10 @@
 #include "Version.hpp"
 #include "ErrorOrLogs.hpp"
 #include "Editor.hpp"
+#include "DataOrLogs.hpp"
+#include "Search.hpp"
 
 bool runProgram = true;
-
 
 void mainSwitch(int& choose) {
     switch (choose)
@@ -27,6 +28,7 @@ void mainSwitch(int& choose) {
         break;
 
     case 4:
+        deleteProduct::lobby();
         break;
 
     case 5:
@@ -42,6 +44,7 @@ void mainSwitch(int& choose) {
         break;
 
     case 9:
+        logWork::show();
         break;
 
     case 10:

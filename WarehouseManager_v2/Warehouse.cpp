@@ -77,6 +77,40 @@ bool Product::removeStock(std::string& chooseName, int& removeStock) {
 	return false;
 }
 
+bool Product::changePrice(std::string& chooseName, double& changeDouble) {
+	for (size_t i = 0; i < productList.size(); i++)
+	{
+		if (productList[i].name == chooseName)
+		{
+			if (verify::priceIs0(changeDouble))
+			{
+				std::cerr << error::priceIs0;
+				logAction.emplace_back(logs::logPriceIs0);
+				return false;
+			}
+
+			productList[i].price = changeDouble;
+			logAction.emplace_back(logs::logPriceChange);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Product::deleteProduct(std::string& delName) {
+	for (size_t i = 0; i < productList.size(); i++)
+	{
+		if (productList[i].name == delName)
+		{
+			productList.erase(productList.begin() + i);
+			logAction.emplace_back(logs::logProductDeleted);
+			std::println("Product {} deleted.", delName);
+			return true;
+		}
+	}
+	return false;
+}
+
 namespace add {
 	std::string newName;
 	int newQuantity;
@@ -183,12 +217,54 @@ namespace add {
 		}
 		if (verify::priceIs0(newPrice))
 		{
-			std::cerr << error::wrongNumber;
-			logAction.emplace_back(logs::logWrongNumber);
+			std::cerr << error::priceIs0;
+			logAction.emplace_back(logs::logPriceIs0);
 			return;
 		}
 
 		setCategory();
+	}
+}
+namespace deleteProduct {
+	std::string deleteName;
+	
+	void deleter() {
+		Product product;
+		if (!product.deleteProduct(deleteName))
+		{
+			std::cerr << error::deleteProductError;
+			logAction.emplace_back(logs::logProductDeleteError);
+		}
+	}
+
+	void consentDelete() {
+		std::string consentChoose;
+		std::print("Are you sure for delete product {}?\nWrite y or n\nYour choose: ", deleteName);
+		std::getline(std::cin >> std::ws, consentChoose);
+
+		bool consentBool = (consentChoose == "y" || consentChoose == "Y");
+
+		if (!consentBool)
+		{
+			logAction.emplace_back(logs::logDeleteProductCancel);
+			std::println("Product deletion canceled.");
+			return;
+		}
+		deleter();
+	}
+
+	void lobby() {
+		std::println("=== Delete product ===");
+		std::print("Remove:(Name) ");
+		std::getline(std::cin >> std::ws, deleteName);
+		if (!verify::nameIsExist(deleteName))
+		{
+			std::cerr << error::nameDoesntExist;
+			logAction.emplace_back(logs::logNameDoesntExist);
+			return;
+		}
+
+		consentDelete();
 	}
 }
 

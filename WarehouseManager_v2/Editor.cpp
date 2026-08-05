@@ -89,7 +89,28 @@ namespace editProduct {
 	}
 
 	void editChangePrice() {
-		std::cerr << "\n== This function will be added later. ==";
+		std::println("== Change price ==");
+		std::print("Price: ");
+		double newPrice;
+		while (!(std::cin >> newPrice))
+		{
+			std::cerr << error::wrongNumber;
+			logAction.emplace_back(logs::logWrongNumber);
+			std::print("\nPrice: ");
+
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		Product product;
+		if (product.changePrice(editName_, newPrice))
+		{
+			std::println("The price has changed.");
+			return;
+		}
+
+		std::cerr << error::priceUpdateError;
+		logAction.emplace_back(logs::logPriceChangeError);
 	}
 
 	void editSwitch(int& input) {
@@ -153,7 +174,6 @@ namespace editProduct {
 			}
 		}
 
-		std::println("----------------------");
 		editProductMenu();
 	}
 

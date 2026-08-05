@@ -139,8 +139,10 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DataOrLogs.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EnumOperation.cpp" />
+    <ClCompile Include="Search.cpp" />
     <ClCompile Include="Verify.cpp" />
     <ClCompile Include="Warehouse.cpp" />
     <ClCompile Include="WarehouseManager_v2.cpp" />
@@ -149,9 +151,11 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataOrLogs.hpp" />
     <ClInclude Include="Editor.hpp" />
     <ClInclude Include="EnumOperation.hpp" />
     <ClInclude Include="ErrorOrLogs.hpp" />
+    <ClInclude Include="Search.hpp" />
     <ClInclude Include="Verify.hpp" />
     <ClInclude Include="Version.hpp" />
     <ClInclude Include="Warehouse.hpp" />

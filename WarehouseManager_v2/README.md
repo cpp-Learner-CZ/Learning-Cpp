@@ -13,7 +13,10 @@
 - Add product
 - Show products
 - Edit product 
-<!-- - Delete product- Search product- Filter- Sort- Statistics- Logs- Export logs- Save and load-->
+- Delete product
+<!-- -Search product - Filter - Sort - Statistics--> 
+- Logs
+<!-- - Export logs- Save and load-->
 
 # How to run
 
@@ -33,4 +36,10 @@ Corrected outdated descriptions and fixed typos.
 
 ***1.1.0***
 
-Added product editing capability (excluding price).
+Added product editing capability (excluding price).  
+
+***1.2.0***
+
+Function to edit a product has been added.  
+Function to show logs has been added.  
+Function to delete a product has been added.  

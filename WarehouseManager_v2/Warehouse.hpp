@@ -41,11 +41,18 @@ public:
 	bool addStock(std::string& chooseName, int& addStock);
 
 	bool removeStock(std::string& chooseName, int& removeStock);
+
+	bool changePrice(std::string& chooseName, double& changeDouble);
+
+	bool deleteProduct(std::string& delName);
 };
 
 extern std::vector<Product> productList;
 
 namespace add {
+	void lobby();
+}
+namespace deleteProduct {
 	void lobby();
 }
 
