@@ -9,6 +9,7 @@
 #include "Editor.hpp"
 #include "DataOrLogs.hpp"
 #include "Search.hpp"
+#include "Filter.hpp"
 
 bool runProgram = true;
 
@@ -32,6 +33,7 @@ void mainSwitch(int& choose) {
         break;
 
     case 5:
+        search::lobby();
         break;
 
     case 6:
@@ -48,10 +50,12 @@ void mainSwitch(int& choose) {
         break;
 
     case 10:
+        logWork::exportLog();
         break;
 
     case 11:
         runProgram = false;
+        //saveData();
         std::println("Program terminated.");
         exit(0);
 
@@ -64,6 +68,7 @@ void mainSwitch(int& choose) {
 
 int main()
 {
+    //loadData();
     while (runProgram) {
         std::println("\n==== Warehouse manager v2:{} ====", appVersion);
         std::println("1) Add product");

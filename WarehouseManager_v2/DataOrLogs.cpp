@@ -1,4 +1,7 @@
 #include <print>
+#include <fstream>
+#include <iostream>
+#include <string>
 
 #include "DataOrLogs.hpp"
 #include "Warehouse.hpp"
@@ -15,5 +18,24 @@ namespace logWork {
 		{
 			std::println("- {}", logAction[i].errorOrLogs);
 		}
+	}
+
+	void exportLog() {
+		std::println("Exporting logs...");
+		std::ofstream exportLog("Logs.log");
+		if (!exportLog.is_open())
+		{
+			std::cerr << "Unexpected error: Can't export logs.";
+			exportLog.close();
+			return;
+		}
+
+		for (size_t i = 0; i < logAction.size(); i++)
+		{
+			exportLog << logAction[i].errorOrLogs << " \n";
+		}
+		
+		exportLog.close();
+		std::println("Logs exported.");
 	}
 }

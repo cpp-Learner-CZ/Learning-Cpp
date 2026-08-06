@@ -15,7 +15,7 @@ enum class Category
 	Oven = 2,
 	Toaster = 3,
 	Iron = 4,
-	ElectricShawer = 5
+	ElectricShaver = 5
 };
 
 class Product {

@@ -21,7 +21,7 @@ namespace enumActions {
 			return Category::Iron;
 
 		case 5:
-			return Category::ElectricShawer;
+			return Category::ElectricShaver;
 		}
 	}
 
@@ -41,8 +41,8 @@ namespace enumActions {
 		case Category::Iron:
 			return "Iron";
 
-		case Category::ElectricShawer:
-			return "Electric shawer";
+		case Category::ElectricShaver:
+			return "Electric shaver";
 		}
 	}
 }

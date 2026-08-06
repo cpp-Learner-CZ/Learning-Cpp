@@ -43,3 +43,8 @@ Added product editing capability (excluding price).
 Function to edit a product has been added.  
 Function to show logs has been added.  
 Function to delete a product has been added.  
+
+***1.3.0***
+
+Function to search a product has been added.  
+Function to export logs has been added.  

@@ -154,7 +154,7 @@ namespace add {
 		std::println("2) Oven");
 		std::println("3) Toaster");
 		std::println("4) Iron");
-		std::print("5) Electric shawer\nChoose: ");
+		std::print("5) Electric shaver\nChoose: ");
 		while (!(std::cin >> newCategory_))
 		{
 			std::cerr << error::wrongNumber;

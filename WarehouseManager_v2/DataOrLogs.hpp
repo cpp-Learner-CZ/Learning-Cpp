@@ -2,4 +2,6 @@
 
 namespace logWork {
 	void show();
+
+	void exportLog();
 }
