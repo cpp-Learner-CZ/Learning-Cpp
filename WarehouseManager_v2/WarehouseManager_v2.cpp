@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 #include <print>
 #include <limits>
-#include <cstdlib>
 
 #include "Warehouse.hpp"
 #include "Version.hpp"
@@ -10,6 +9,7 @@
 #include "DataOrLogs.hpp"
 #include "Search.hpp"
 #include "Filter.hpp"
+#include "Sorter.hpp"
 
 bool runProgram = true;
 
@@ -37,12 +37,15 @@ void mainSwitch(int& choose) {
         break;
 
     case 6:
+        filter::lobby();
         break;
 
     case 7:
+        sorter::lobby();
         break;
 
     case 8:
+
         break;
 
     case 9:
@@ -55,9 +58,9 @@ void mainSwitch(int& choose) {
 
     case 11:
         runProgram = false;
-        //saveData();
+        data::saveData();
         std::println("Program terminated.");
-        exit(0);
+        break;
 
     default:
         std::cerr << error::wrongNumber1to11;
@@ -68,7 +71,7 @@ void mainSwitch(int& choose) {
 
 int main()
 {
-    //loadData();
+    data::loadData();
     while (runProgram) {
         std::println("\n==== Warehouse manager v2:{} ====", appVersion);
         std::println("1) Add product");
@@ -94,5 +97,10 @@ int main()
         }
 
         mainSwitch(choose);
+    }
+
+    if (!runProgram)
+    {
+        return 0;
     }
 }

@@ -4,7 +4,7 @@
 
 ### This training project will not be updated
 
-## Used C++ Vector, String, bool, sort, print, namespace, enum class, work with .cpp and .hpp, struct, class
+## Used C++ Vector, String, bool, sort, fstream, print, namespace, enum class, work with .cpp and .hpp, struct, class
 
 **New: More work with class**
 
@@ -14,9 +14,12 @@
 - Show products
 - Edit product 
 - Delete product
-<!-- -Search product - Filter - Sort - Statistics--> 
+- Search product 
+- Filter 
+- Sort <!-- - Statistics--> 
 - Logs
-<!-- - Export logs- Save and load-->
+- Export logs
+<!-- - Save and load-->
 
 # How to run
 
@@ -48,3 +51,8 @@ Function to delete a product has been added.
 
 Function to search a product has been added.  
 Function to export logs has been added.  
+
+***1.4.0***
+
+Added function to filter products.  
+Added function to sort products.  

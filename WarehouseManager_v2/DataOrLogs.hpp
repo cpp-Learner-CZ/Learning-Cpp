@@ -5,3 +5,9 @@ namespace logWork {
 
 	void exportLog();
 }
+
+namespace data {
+	void saveData();
+
+	void loadData();
+}

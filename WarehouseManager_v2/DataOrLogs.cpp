@@ -39,3 +39,13 @@ namespace logWork {
 		std::println("Logs exported.");
 	}
 }
+
+namespace data {
+	void saveData() {
+		std::println("Function to save data will be added later.");
+	}
+
+	void loadData() {
+		std::println("Function to load data will be added later.");
+	}
+}
