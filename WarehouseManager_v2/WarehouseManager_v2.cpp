@@ -10,6 +10,7 @@
 #include "Search.hpp"
 #include "Filter.hpp"
 #include "Sorter.hpp"
+#include "Statistics.hpp"
 
 bool runProgram = true;
 
@@ -45,7 +46,7 @@ void mainSwitch(int& choose) {
         break;
 
     case 8:
-
+        statistics::lobby();
         break;
 
     case 9:

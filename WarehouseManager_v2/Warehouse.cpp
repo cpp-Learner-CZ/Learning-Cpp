@@ -111,6 +111,12 @@ bool Product::deleteProduct(std::string& delName) {
 	return false;
 }
 
+double Product::productValue(const int& iterator) {
+	double productValueTotal = 0;
+	productValueTotal = productList[iterator].quantity * productList[iterator].price;
+	return productValueTotal;
+}
+
 namespace add {
 	std::string newName;
 	int newQuantity;

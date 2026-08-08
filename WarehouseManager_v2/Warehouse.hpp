@@ -45,6 +45,8 @@ public:
 	bool changePrice(std::string& chooseName, double& changeDouble);
 
 	bool deleteProduct(std::string& delName);
+
+	double productValue(const int& iterator);
 };
 
 extern std::vector<Product> productList;

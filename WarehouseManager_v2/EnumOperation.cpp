@@ -25,6 +25,9 @@ namespace enumActions {
 		}
 	}
 
+	//int categoryToInt(const Category& intInput) {
+	//}
+
 	//Print string by enum Category
 	std::string enumToString(const Category& categoryInput) {
 		switch (categoryInput)

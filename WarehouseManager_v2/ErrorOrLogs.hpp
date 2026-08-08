@@ -17,6 +17,8 @@ namespace error {
 	inline const std::string priceUpdateError = "\nUnexpected error: Can't update price!";
 	inline const std::string stockRemoveIntBigger = "Invalid input: Value exceeds available quantity!";
 	inline const std::string deleteProductError = "Unexpected error: Can't delete product!";
+	inline const std::string errorWriteData = "File save error: Can't write data!";
+	inline const std::string errorLoadData = "File load error: File employeeSave.dat doesn't exist.\nThe file will be created after the program ends.";
 }
 
 namespace logs {
@@ -44,4 +46,6 @@ namespace logs {
 	inline const std::string logProductDeleted = "[INFO] Product deleted.";
 	inline const std::string logProductDeleteError = "[Warning] Can't delete product.";
 	inline const std::string logDeleteProductCancel = "[INFO] Product deletion canceled.";
+	inline const std::string logErrorWriteData = "[ERROR] Can't write data.";
+	inline const std::string logErrorLoadData = "[ERROR] Can't load data.";
 }

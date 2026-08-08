@@ -1,4 +1,4 @@
-# Learning C++ Console app: uncompleted
+# Learning C++ Console app
 
 **This file is use only for train C++**
 
@@ -16,10 +16,11 @@
 - Delete product
 - Search product 
 - Filter 
-- Sort <!-- - Statistics--> 
+- Sort 
+- Statistics 
 - Logs
 - Export logs
-<!-- - Save and load-->
+- Save and load
 
 # How to run
 
@@ -56,3 +57,7 @@ Function to export logs has been added.
 
 Added function to filter products.  
 Added function to sort products.  
+
+***1.5.0***
+Added function to statistics.  
+Added function to save and load.  
