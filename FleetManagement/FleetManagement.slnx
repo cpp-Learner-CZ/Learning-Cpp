@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="FleetManagement.vcxproj" Id="b994a99a-4577-4961-8bfa-55c394e5a71a" />
+</Solution>
