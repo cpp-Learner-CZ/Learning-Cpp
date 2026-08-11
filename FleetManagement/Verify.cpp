@@ -60,14 +60,31 @@ namespace verify {
 		return false;
 	}
 
+
+	bool validFuelTypeEnum(const int& input) {
+		if (input == 0 || input > 4)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	bool validCarStatusEnum(const int& input) {
+		if (input == 0 || input > 3)
+		{
+			return true;
+		}
+		return false;
+	}
+
 	// Verify if the number is equal to zero 
 	namespace equalZero {
-		bool zeroInt(int& check) {
+		bool zeroInt(const int& check) {
 			if (check == 0)	return true;
 			return false;
 		}
 
-		bool zeroFloat(float& check) {
+		bool zeroFloat(const float& check) {
 			if (check == 0)	return true;
 			return false;
 		}

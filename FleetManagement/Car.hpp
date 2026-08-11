@@ -39,25 +39,17 @@ private:
 public:
 	Car(){}
 
-	Car(std::string b, std::string mo, float p, float mi, int y, FuelType f, CarStatus c)
-	{
-		// A new car is always available
-		c = CarStatus::Available;
-
-		brand = b;
-		model = mo;
-		price = p;
-		mileageInKm = mi;
-		yearOfProduction = y;
-		fuelType = f;
-		carStatus = c;
-	}
+	Car(std::string b, std::string mo, float p, float mi, int y, FuelType f);
 
 	std::string getBrand();
 
 	std::string getModel();
+
+	void showCar(int index, std::vector<Car>& carList);
 };
 
 namespace addCar {
 	void lobby(std::vector<Car>& carList);
 }
+
+void showCars(std::vector<Car>& carList);

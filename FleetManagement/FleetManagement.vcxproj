@@ -139,6 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EnumOperation.cpp" />
     <ClCompile Include="FleetManagement.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Verify.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.hpp" />
+    <ClInclude Include="EnumOperation.hpp" />
     <ClInclude Include="ErrorOrLogs.hpp" />
     <ClInclude Include="Verify.hpp" />
     <ClInclude Include="Version.hpp" />

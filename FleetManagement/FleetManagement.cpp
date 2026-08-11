@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 #include <print>
-#include <limits>
 #include <vector>
 
 #include "ErrorOrLogs.hpp"
@@ -15,10 +14,11 @@ void mainSwitch(const int& input) {
 	switch (input)
 	{
 	case 1:
-		//addCar::lobby(carList);
+		addCar::lobby(carList);
 		break;
 
 	case 2:
+		showCars(carList);
 		break;
 
 	case 3:
