@@ -17,6 +17,74 @@ std::string Car::getModel() {
 	return this->model = model;
 }
 
+CarStatus Car::getCarStatus() {
+	return this->carStatus = carStatus;
+}
+
+bool Car::setModel(const std::string& searchBrandSet, const std::string newModelSet, std::vector<Car>& carList) {
+	// Check if car model is alredy exist
+	if (this->brand == searchBrandSet && this->model == newModelSet)
+	{
+		std::cerr << error::carModelAlredyExist;
+		logList.emplace_back(logs::logCarModelAlredyExist);
+		return false;
+	}
+
+	this->model = newModelSet;
+	return true;
+}
+
+bool Car::setPrice(const float newPriceSet) {
+	if (verify::equalZero::zeroFloat(newPriceSet))
+	{
+		std::cerr << error::priceEqualZero;
+		logList.emplace_back(logs::logPriceEqualZero);
+		return false;
+	}
+
+	 if(this->price == newPriceSet) {
+		 std::cerr << error::priceEnteredEqualCurrent;
+		 logList.emplace_back(logs::logPriceEnteredEqualCurrent);
+		 return false;
+	 }
+
+	this->price = newPriceSet;
+	return true;
+}
+
+bool Car::setMileage(const float newMileageSet) {
+	if (this->mileageInKm == newMileageSet)
+	{
+		std::cerr << error::mileageEnteredEqualCurrent;
+		logList.emplace_back(logs::logMileageEnteredEqualCurrent);
+		return false;
+	}
+	
+	this->mileageInKm = newMileageSet;
+	return true;
+}
+
+bool Car::setFuelType(const int newFuelType) {
+	if (verify::validFuelTypeEnum(newFuelType))
+	{
+		std::cerr << error::wrongNumber1to4;
+		logList.emplace_back(logs::logWrongNumber1to4);
+		return false;
+	}
+
+	FuelType fuelEnum = enumAction::intToFuelType(newFuelType);
+
+	if (this->fuelType == fuelEnum)
+	{
+		std::cerr << error::fuelTypeEnteredEqualCurrent;
+		logList.emplace_back(logs::logFuelTypeEnteredEqualCurrent);
+		return false;
+	}
+
+	this->fuelType = fuelEnum;
+	return true;
+}
+
 Car::Car(std::string b, std::string mo, float p, float mi, int y, FuelType f) {
 	brand = b;
 	model = mo;
@@ -37,7 +105,6 @@ void Car::showCar(int index, std::vector<Car>& carList) {
 	std::println("Year of production: {}", carList[index].yearOfProduction);
 	std::println("Fuel type: {}", enumAction::enumFuelToString(carList[index].fuelType));
 	std::println("Car status: {}", enumAction::enumCarToString(carList[index].carStatus));
-	std::println("----------------------------");
 }
 
 namespace addCar {
@@ -155,6 +222,50 @@ namespace addCar {
 	}
 }
 
+namespace searchCar {
+
+	void mainSearch(const std::string& searchBrand, const std::string& searchModel, std::vector<Car>& carList) {
+		// Check if car is alredy exist
+		if (!(verify::brandIsExist(searchBrand, carList) && verify::modelIsExist(searchModel, carList)))
+		{
+			std::cerr << error::carDoesntExist;
+			logList.emplace_back(logs::logCarDoesntExist);
+			return;
+		}
+
+		for (size_t i = 0; i < carList.size(); i++)
+		{
+			if (carList[i].getBrand() == searchBrand  && carList[i].getModel() == searchModel)
+			{
+				Car car;
+				car.showCar(i, carList);
+			}
+		}
+	}
+
+	void lobby(std::vector<Car>& carList) {
+		std::println("=== Search car ===");
+		std::print("Car brand: ");
+		std::string searchBrand_;
+		std::getline(std::cin >> std::ws, searchBrand_);
+
+		std::print("Car model: ");
+		std::string searchModel_;
+		std::getline(std::cin >> std::ws, searchModel_);
+
+		// Check if car is alredy exist
+		if (!(verify::brandIsExist(searchBrand_, carList) && verify::modelIsExist(searchModel_, carList)))
+		{
+			std::cerr << error::carDoesntExist;
+			logList.emplace_back(logs::logCarDoesntExist);
+			return;
+		}
+
+		std::println("----------------------------");
+		mainSearch(searchBrand_, searchModel_, carList);
+	}
+}
+
 void showCars(std::vector<Car>& carList) {
 	std::println("=== Show cars ===");
 	if (carList.size() == 0)
@@ -167,5 +278,6 @@ void showCars(std::vector<Car>& carList) {
 	for (size_t i = 0; i < carList.size(); i++)
 	{
 		car.showCar(i, carList);
+		std::println("----------------------------");
 	}
 }

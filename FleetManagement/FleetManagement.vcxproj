@@ -139,9 +139,11 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EnumOperation.cpp" />
     <ClCompile Include="FleetManagement.cpp" />
     <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Remove.cpp" />
     <ClCompile Include="Verify.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,8 +151,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.hpp" />
+    <ClInclude Include="Editor.hpp" />
     <ClInclude Include="EnumOperation.hpp" />
     <ClInclude Include="ErrorOrLogs.hpp" />
+    <ClInclude Include="Remove.hpp" />
     <ClInclude Include="Verify.hpp" />
     <ClInclude Include="Version.hpp" />
   </ItemGroup>

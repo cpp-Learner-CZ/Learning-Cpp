@@ -45,10 +45,26 @@ public:
 
 	std::string getModel();
 
+	CarStatus getCarStatus();
+
+	bool setModel(const std::string& searchBrandSet, const std::string newModelSet, std::vector<Car>& carList);
+
+	bool setPrice(const float newPriceSet);
+
+	bool setMileage(const float newMileageSet);
+
+	bool setFuelType(const int newFuelType);
+
 	void showCar(int index, std::vector<Car>& carList);
 };
 
 namespace addCar {
+	void lobby(std::vector<Car>& carList);
+}
+
+namespace searchCar {
+	void mainSearch(const std::string& searchBrand, const std::string& searchModel, std::vector<Car>& carList);
+
 	void lobby(std::vector<Car>& carList);
 }
 

@@ -29,7 +29,7 @@ namespace enumAction {
 			return "Diesel";
 
 		case FuelType::Hybrid:
-			return "Hzbrid";
+			return "Hybrid";
 
 		case FuelType::Electric:
 			return "Electric";

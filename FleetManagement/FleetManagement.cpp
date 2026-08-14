@@ -6,6 +6,8 @@
 #include "Verify.hpp"
 #include "Car.hpp"
 #include "Version.hpp"
+#include "Editor.hpp"
+#include "Remove.hpp"
 
 bool ProgramRun = true;
 std::vector<Car> carList;
@@ -22,12 +24,15 @@ void mainSwitch(const int& input) {
 		break;
 
 	case 3:
+		editor::lobby(carList);
 		break;
 
 	case 4:
+		//remover::lobby(carList);
 		break;
 
 	case 5:
+		searchCar::lobby(carList);
 		break;
 
 	case 6:

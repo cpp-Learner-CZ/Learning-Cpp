@@ -15,10 +15,10 @@ Vector, sort, const, fstream, print, namespace, enum class, work with .cpp and .
 
 - Add car
 - Show cars
-<!-- - Edit car
-- Remove car
+- Edit car
+<!-- - Remove car -->
 - Search
-- Filter 
+<!-- - Filter 
 - Sort 
 - Statistics 
 - Rent car
@@ -43,3 +43,8 @@ Main functions
 Function to add a car has been added.  
 Function to show cars has been added.  
 Fixed README.md.  
+
+***1.2.0***
+
+Function to edit a car has been added.  
+Function to search a car has been added.  
