@@ -21,6 +21,10 @@ CarStatus Car::getCarStatus() {
 	return this->carStatus = carStatus;
 }
 
+float Car::getPrice() {
+	return this->price = price;
+}
+
 bool Car::setModel(const std::string& searchBrandSet, const std::string newModelSet, std::vector<Car>& carList) {
 	// Check if car model is alredy exist
 	if (this->brand == searchBrandSet && this->model == newModelSet)

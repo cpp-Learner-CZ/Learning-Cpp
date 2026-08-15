@@ -16,7 +16,7 @@ Vector, sort, const, fstream, print, namespace, enum class, work with .cpp and .
 - Add car
 - Show cars
 - Edit car
-<!-- - Remove car -->
+- Remove car
 - Search
 <!-- - Filter 
 - Sort 
@@ -48,3 +48,7 @@ Fixed README.md.
 
 Function to edit a car has been added.  
 Function to search a car has been added.  
+
+***1.3.0***
+
+Function to remove a car has been added.  

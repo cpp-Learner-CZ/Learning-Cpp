@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EnumOperation.cpp" />
+    <ClCompile Include="Filter.cpp" />
     <ClCompile Include="FleetManagement.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Remove.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Editor.hpp" />
     <ClInclude Include="EnumOperation.hpp" />
     <ClInclude Include="ErrorOrLogs.hpp" />
+    <ClInclude Include="Filter.hpp" />
     <ClInclude Include="Remove.hpp" />
     <ClInclude Include="Verify.hpp" />
     <ClInclude Include="Version.hpp" />

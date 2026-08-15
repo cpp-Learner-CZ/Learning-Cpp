@@ -28,7 +28,7 @@ void mainSwitch(const int& input) {
 		break;
 
 	case 4:
-		//remover::lobby(carList);
+		remover::lobby(carList);
 		break;
 
 	case 5:

@@ -47,6 +47,8 @@ public:
 
 	CarStatus getCarStatus();
 
+	float getPrice();
+
 	bool setModel(const std::string& searchBrandSet, const std::string newModelSet, std::vector<Car>& carList);
 
 	bool setPrice(const float newPriceSet);

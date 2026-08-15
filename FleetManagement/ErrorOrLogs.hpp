@@ -43,4 +43,6 @@ namespace logs {
 	inline const std::string logMileageEnteredEqualCurrent = "[Warning] The entered mileage is the same as the current mileage.";
 	inline const std::string logFuelTypeEnteredEqualCurrent = "[Warning] The entered fuel type is the same as the current fuel type.";
 	inline const std::string logRemoveCarRented = "[Warning] Can't remove the car because it is already rented.";
+	inline const std::string logRemoveCanceled = "[INFO] Car removal canceled.";
+	inline const std::string logRemoveCompleted = "[INFO] Car removed.";
 }
