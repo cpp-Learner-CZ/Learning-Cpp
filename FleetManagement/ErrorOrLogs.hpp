@@ -45,4 +45,8 @@ namespace logs {
 	inline const std::string logRemoveCarRented = "[Warning] Can't remove the car because it is already rented.";
 	inline const std::string logRemoveCanceled = "[INFO] Car removal canceled.";
 	inline const std::string logRemoveCompleted = "[INFO] Car removed.";
+	inline const std::string sortBrand = "[INFO] Sorted by brand.";
+	inline const std::string sortModel = "[INFO] Sorted by model.";
+	inline const std::string sortPRice = "[INFO] Sorted by price.";
+	inline const std::string sortMileage = "[INFO] Sorted by mileage.";
 }

@@ -8,6 +8,8 @@
 #include "Version.hpp"
 #include "Editor.hpp"
 #include "Remove.hpp"
+#include "Filter.hpp"
+#include "Sorter.hpp"
 
 bool ProgramRun = true;
 std::vector<Car> carList;
@@ -36,9 +38,11 @@ void mainSwitch(const int& input) {
 		break;
 
 	case 6:
+		filter::lobby(carList);
 		break;
 
 	case 7:
+		sorter::lobby(carList);
 		break;
 
 	case 8:

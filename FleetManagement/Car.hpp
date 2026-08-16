@@ -41,13 +41,17 @@ public:
 
 	Car(std::string b, std::string mo, float p, float mi, int y, FuelType f);
 
-	std::string getBrand();
+	std::string getBrand() const;
 
-	std::string getModel();
+	std::string getModel() const;
+
+	float getPrice() const;
+
+	float getMileage() const;
+
+	FuelType getFuelType();
 
 	CarStatus getCarStatus();
-
-	float getPrice();
 
 	bool setModel(const std::string& searchBrandSet, const std::string newModelSet, std::vector<Car>& carList);
 

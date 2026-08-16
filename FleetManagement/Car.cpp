@@ -9,20 +9,28 @@
 
 std::vector<logString> logList;
 
-std::string Car::getBrand() {
-	return this->brand = brand;
+std::string Car::getBrand() const {
+	return this->brand;
 }
 
-std::string Car::getModel() {
-	return this->model = model;
+std::string Car::getModel() const {
+	return this->model;
+}
+
+float Car::getPrice() const {
+	return this->price;
+}
+
+float Car::getMileage() const {
+	return this->mileageInKm;
+}
+
+FuelType Car::getFuelType() {
+	return this->fuelType;
 }
 
 CarStatus Car::getCarStatus() {
-	return this->carStatus = carStatus;
-}
-
-float Car::getPrice() {
-	return this->price = price;
+	return this->carStatus;
 }
 
 bool Car::setModel(const std::string& searchBrandSet, const std::string newModelSet, std::vector<Car>& carList) {
