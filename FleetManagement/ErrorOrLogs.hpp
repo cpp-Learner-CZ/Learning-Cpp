@@ -16,6 +16,10 @@ namespace error {
 	inline const std::string mileageEnteredEqualCurrent = "Invalid mileage: The entered mileage is the same as the current mileage!";
 	inline const std::string fuelTypeEnteredEqualCurrent = "Invalid fuel type: The entered fuel type is the same as the current fuel type!";
 	inline const std::string removeCarRented = "Car rented: Can't remove the car because it is already rented!";
+	inline const std::string carAvailabilityFalse = "Invalid status: The car is not available!";
+	inline const std::string carRentedFalse = "Invalid status: The car is not rented!";
+	inline const std::string errorCarInService = "Invalid status: The car is in service center!";
+	inline const std::string errorCarIsntService = "Invalid status: The car is not in service center!";
 }
 
 namespace logs {
@@ -45,8 +49,16 @@ namespace logs {
 	inline const std::string logRemoveCarRented = "[Warning] Can't remove the car because it is already rented.";
 	inline const std::string logRemoveCanceled = "[INFO] Car removal canceled.";
 	inline const std::string logRemoveCompleted = "[INFO] Car removed.";
-	inline const std::string sortBrand = "[INFO] Sorted by brand.";
-	inline const std::string sortModel = "[INFO] Sorted by model.";
-	inline const std::string sortPRice = "[INFO] Sorted by price.";
-	inline const std::string sortMileage = "[INFO] Sorted by mileage.";
+	inline const std::string logSortBrand = "[INFO] Sorted by brand.";
+	inline const std::string logSortModel = "[INFO] Sorted by model.";
+	inline const std::string logSortPRice = "[INFO] Sorted by price.";
+	inline const std::string logSortMileage = "[INFO] Sorted by mileage.";
+	inline const std::string logCarAvailabilityFalse = "[Warning] The car is not available.";
+	inline const std::string logCarRentedFalse = "[Warning] The car is not rented.";
+	inline const std::string logCarSetRented = "[INFO] The car was rented.";
+	inline const std::string logCarSetReturned = "[INFO] The car was returned.";
+	inline const std::string logErrorCarInService = "[Warning] The car is in service center.";
+	inline const std::string logErrorCarIsntService = "[Warning] The car is not in service center.";
+	inline const std::string logCarTakenToService = "[INFO] The car was taken to the service center.";
+	inline const std::string logCarCollectedFromService = "[INFO] The car was collected from the service center.";
 }

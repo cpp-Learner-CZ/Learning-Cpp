@@ -1,13 +1,16 @@
 #pragma once
+#include <vector>
+
+#include "Car.hpp"
 
 namespace carRent {
-	void lobby();
+	void lobby(std::vector<Car>& carList);
 }
 
 namespace carReturn {
-	void lobby();
+	void lobby(std::vector<Car>& carList);
 }
 
 namespace carService {
-	void lobby();
+	void lobby(std::vector<Car>& carList);
 }

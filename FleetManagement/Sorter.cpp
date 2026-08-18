@@ -38,25 +38,25 @@ namespace sorter {
 		case 1:
 			sortByBrand(carList);
 			std::println("Sorted by brand.");
-			logList.emplace_back(logs::sortBrand);
+			logList.emplace_back(logs::logSortBrand);
 			break;
 
 		case 2:
 			sortByModel(carList);
 			std::println("Sorted by model.");
-			logList.emplace_back(logs::sortModel);
+			logList.emplace_back(logs::logSortModel);
 			break;
 
 		case 3:
 			sortByPrice(carList);
 			std::println("Sorted by price.");
-			logList.emplace_back(logs::sortPRice);
+			logList.emplace_back(logs::logSortPRice);
 			break;
 
 		case 4:
 			sortByMileage(carList);
 			std::println("Sorted by mileage.");
-			logList.emplace_back(logs::sortMileage);
+			logList.emplace_back(logs::logSortMileage);
 			break;
 
 		case 5:

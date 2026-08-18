@@ -53,6 +53,21 @@ public:
 
 	CarStatus getCarStatus();
 
+	void setCarStatusRent();
+
+	void setCarStatusAvailable();
+
+	void setCarStatusService();
+
+	// Check if a car is available for rent
+	bool carAvailable();
+
+	// Check if a car is rented
+	bool carRented();
+
+	// Check if car is in the service
+	bool carInService();
+
 	bool setModel(const std::string& searchBrandSet, const std::string newModelSet, std::vector<Car>& carList);
 
 	bool setPrice(const float newPriceSet);

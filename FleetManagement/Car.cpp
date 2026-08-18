@@ -33,6 +33,45 @@ CarStatus Car::getCarStatus() {
 	return this->carStatus;
 }
 
+void Car::setCarStatusRent() {
+	this->carStatus = CarStatus::Rented;
+}
+
+void Car::setCarStatusAvailable() {
+	this->carStatus = CarStatus::Available;
+}
+
+void Car::setCarStatusService() {
+	this->carStatus = CarStatus::Service;
+}
+
+// Check if a car is available for rent
+bool Car::carAvailable() {
+	if (this->carStatus == CarStatus::Available)
+	{
+		return true;
+	}
+	return false;
+}
+
+// Check if a car is rented
+bool Car::carRented() {
+	if (this->carStatus == CarStatus::Rented)
+	{
+		return true;
+	}
+	return false;
+}
+
+// Check if car is in the service
+bool Car::carInService() {
+	if (this->carStatus == CarStatus::Service)
+	{
+		return true;
+	}
+	return false;
+}
+
 bool Car::setModel(const std::string& searchBrandSet, const std::string newModelSet, std::vector<Car>& carList) {
 	// Check if car model is alredy exist
 	if (this->brand == searchBrandSet && this->model == newModelSet)

@@ -60,7 +60,6 @@ namespace verify {
 		return false;
 	}
 
-
 	bool validFuelTypeEnum(const int& input) {
 		if (input == 0 || input > 4)
 		{

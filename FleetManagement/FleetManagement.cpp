@@ -10,6 +10,8 @@
 #include "Remove.hpp"
 #include "Filter.hpp"
 #include "Sorter.hpp"
+#include "CarStatusAction.hpp"
+#include "Statistics.hpp"
 
 bool ProgramRun = true;
 std::vector<Car> carList;
@@ -49,12 +51,15 @@ void mainSwitch(const int& input) {
 		break;
 
 	case 9:
+		carRent::lobby(carList);
 		break;
 
 	case 10:
+		carReturn::lobby(carList);
 		break;
 
 	case 11:
+		carService::lobby(carList);
 		break;
 
 	case 12:
@@ -89,7 +94,7 @@ int main()
 		std::println("8) Statistics");
 		std::println("9) Rent car");
 		std::println("10) Return car");
-		std::println("11) Service");
+		std::println("11) Service center");
 		std::println("12) Logs");
 		std::println("13) Export logs");
 		std::print("14) Exit\nChoose: ");
