@@ -24,7 +24,7 @@ namespace remover {
 	}
 
 	void consentRemove(std::vector<Car>& carList) {
-		std::println("== Consent remove ==");
+		std::println("\n== Consent remove ==");
 		for (size_t i = 0; i < carList.size(); i++)
 		{
 			if (removeBrand == carList[i].getBrand() && removeModel == carList[i].getModel())
@@ -34,7 +34,7 @@ namespace remover {
 			}
 		}
 
-		std::print("Do you want remove this car?\nWrite y or n: ");
+		std::print("= Do you want remove this car?\nWrite y or n: ");
 		std::string stringConstent;
 		std::getline(std::cin >> std::ws, stringConstent);
 

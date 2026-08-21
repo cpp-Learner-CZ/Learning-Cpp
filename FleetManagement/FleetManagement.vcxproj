@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CarStatusAction.cpp" />
+    <ClCompile Include="Data.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EnumOperation.cpp" />
     <ClCompile Include="Filter.cpp" />
@@ -156,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="Car.hpp" />
     <ClInclude Include="CarStatusAction.hpp" />
+    <ClInclude Include="Data.hpp" />
     <ClInclude Include="Editor.hpp" />
     <ClInclude Include="EnumOperation.hpp" />
     <ClInclude Include="ErrorOrLogs.hpp" />

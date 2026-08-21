@@ -25,6 +25,10 @@ float Car::getMileage() const {
 	return this->mileageInKm;
 }
 
+int Car::getYearOfProduction() {
+	return this->yearOfProduction;
+}
+
 FuelType Car::getFuelType() {
 	return this->fuelType;
 }
@@ -146,6 +150,18 @@ Car::Car(std::string b, std::string mo, float p, float mi, int y, FuelType f) {
 
 	// A new car is always available
 	carStatus = CarStatus::Available;
+}
+
+Car::Car(std::string b, std::string mo, float p, float mi, int y, FuelType f, CarStatus c) {
+
+	// A function to load data from the car.
+	brand = b;
+	model = mo;
+	price = p;
+	mileageInKm = mi;
+	yearOfProduction = y;
+	fuelType = f;
+	carStatus = c;
 }
 
 void Car::showCar(int index, std::vector<Car>& carList) {

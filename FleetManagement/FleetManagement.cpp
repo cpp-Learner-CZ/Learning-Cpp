@@ -12,6 +12,7 @@
 #include "Sorter.hpp"
 #include "CarStatusAction.hpp"
 #include "Statistics.hpp"
+#include "Data.hpp"
 
 bool ProgramRun = true;
 std::vector<Car> carList;
@@ -48,6 +49,7 @@ void mainSwitch(const int& input) {
 		break;
 
 	case 8:
+		statistics::lobby(carList);
 		break;
 
 	case 9:
@@ -63,9 +65,11 @@ void mainSwitch(const int& input) {
 		break;
 
 	case 12:
+		logActions::showLogs();
 		break;
 
 	case 13:
+		logActions::exportLogs();
 		break;
 
 	case 14:
@@ -81,6 +85,7 @@ void mainSwitch(const int& input) {
 
 int main()
 {
+	fileDataAction::loadData(carList);
 	while (ProgramRun)
 	{
 		std::println("\n==== Fleet management v{} ====", version);
@@ -106,6 +111,7 @@ int main()
 
 	if (!ProgramRun)
 	{
+		fileDataAction::saveData(carList);
 		std::println("Program terminated.");
 		return 0;
 	}

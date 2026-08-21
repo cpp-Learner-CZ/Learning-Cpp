@@ -41,6 +41,8 @@ public:
 
 	Car(std::string b, std::string mo, float p, float mi, int y, FuelType f);
 
+	Car(std::string b, std::string mo, float p, float mi, int y, FuelType f, CarStatus c);
+
 	std::string getBrand() const;
 
 	std::string getModel() const;
@@ -48,6 +50,8 @@ public:
 	float getPrice() const;
 
 	float getMileage() const;
+
+	int getYearOfProduction();
 
 	FuelType getFuelType();
 

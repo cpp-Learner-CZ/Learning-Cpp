@@ -20,6 +20,10 @@ namespace error {
 	inline const std::string carRentedFalse = "Invalid status: The car is not rented!";
 	inline const std::string errorCarInService = "Invalid status: The car is in service center!";
 	inline const std::string errorCarIsntService = "Invalid status: The car is not in service center!";
+	inline const std::string carListEmpty = "Cannot load statistics: Car list is empty.";
+	inline const std::string exportLogFailed = "File error: Cannot export logs.";
+	inline const std::string fileActionSaveFailed = "File error: Cannot save data from the current fleet management.";
+	inline const std::string fileActionLoadFailed = "File error: Cannot find the file to load data. \nThe file will be created after the program terminates.";
 }
 
 namespace logs {
@@ -61,4 +65,8 @@ namespace logs {
 	inline const std::string logErrorCarIsntService = "[Warning] The car is not in service center.";
 	inline const std::string logCarTakenToService = "[INFO] The car was taken to the service center.";
 	inline const std::string logCarCollectedFromService = "[INFO] The car was collected from the service center.";
+	inline const std::string logCarListEmpty = "[ERROR] Car list is empty.";
+	inline const std::string logExportLogFailed = "[ERROR] Cannot export logs.";
+	inline const std::string logFileActionSaveFailed = "[ERROR] Cannot save data from the current fleet management.";
+	inline const std::string logFileActionLoadFailed = "[ERROR] Cannot find the file to load data.";
 }

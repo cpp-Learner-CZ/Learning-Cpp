@@ -20,13 +20,14 @@
 - Remove car
 - Search
 - Filter 
-- Sort <!-- - Statistics --> 
+- Sort 
+- Statistics
 - Rent car
 - Return car
 - Service center
-<!-- - Logs
+- Logs
 - Export logs
-- Save and load -->
+- Save and load
 
 # How to run
 
@@ -59,3 +60,9 @@ A feature to rent a car has been added.
 A feature to remove a car has been added.  
 Fixed README.md.  
 A feature for service center administration has been added.  
+
+***1.6.0***  
+A feature statistics has been added.  
+A feature to show logs has been added.  
+A feature to export logs has been added.  
+A feature to save and load has been added.  
