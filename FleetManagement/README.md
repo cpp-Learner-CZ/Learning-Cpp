@@ -1,4 +1,4 @@
-# Learning C++ Console app: incompleted
+# Learning C++ Console app
 
 ## This training project will be updated only during the incomplete phase
 
@@ -66,3 +66,6 @@ A feature statistics has been added.
 A feature to show logs has been added.  
 A feature to export logs has been added.  
 A feature to save and load has been added.  
+
+***1.7.0***  
+Final version

@@ -1,0 +1,14 @@
+#pragma once
+#include <string>
+
+namespace writeInput {
+	void writeInt(int& input, const std::string& message);
+}
+
+namespace verify {
+	bool intEqualZero(const int& integer);
+
+	bool IDExist(const int& checkID, std::vector<Patient>& patients);
+
+	bool nameExist(const std::string& checkName, std::vector<Patient>& patients);
+}
