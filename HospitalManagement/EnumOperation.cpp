@@ -18,4 +18,21 @@ namespace enumActions {
 			return Department::Emergency;
 		}
 	}
+
+	std::string departmentToString(const Department& showDepartment) {
+		switch (showDepartment)
+		{	
+		case Department::Surgery:
+			return "Surgery";
+
+		case Department::Cardiology:
+			return "Cardiology";
+
+		case Department::Neurology:
+			return "Neurology";
+
+		case Department::Emergency:
+			return "Emergency";
+		}
+	}
 }

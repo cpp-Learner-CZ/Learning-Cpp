@@ -21,7 +21,7 @@ namespace writeInput {
 }
 
 namespace verify {
-	bool intEqualZero(const int& integer) {
+	bool intEqualZero(const int integer) {
 		if (integer == 0)
 		{
 			return true;
@@ -29,7 +29,7 @@ namespace verify {
 		return false;
 	}
 
-	bool IDExist(const int& checkID, std::vector<Patient>& patients) {
+	bool IDExist(const int checkID, std::vector<Patient>& patients) {
 		for (size_t i = 0; i < patients.size(); i++)
 		{
 			if (checkID == patients[i].getID())
@@ -51,4 +51,11 @@ namespace verify {
 		return false;
 	}
 
+	bool departmentValidInt1To4(const int& intValid) {
+		if (intValid != 0 && intValid <= 4)
+		{
+			return true;
+		}
+		return false;
+	}
 }
