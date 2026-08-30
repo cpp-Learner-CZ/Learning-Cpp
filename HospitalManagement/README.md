@@ -5,7 +5,7 @@
 ### **This file is use only for train C++**
 
 ## Technologies in C++ 
-- `if`, `for`, `while`, `bool`, `std::string`, `do`, `continue`  
+- `if`, `for`, `while`, `switch`, `break`, `bool`, `std::string`, `do`, `continue`  
 - `const`, `namespace`  
 - enum class, `struct`  
 - `std::vector`, `std::sort`, fstream, print, work with `.cpp` and `.hpp`  
@@ -15,7 +15,8 @@
 
 # Functions   
 
-- Add patient
+- Add patient  
+- Show patients
 
 # How to run
 
@@ -28,3 +29,7 @@ Core Features
 
 ***0.0.2***  
 Add 'Add patient' functionality (contains three unfixed errors)  
+
+***0.0.3***  
+Feature 'Add patient': Fixed three errors  
+Add 'Show patients' functionality  

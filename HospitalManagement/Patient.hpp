@@ -4,6 +4,11 @@
 
 extern std::vector<std::string> logList;
 
+struct TreatmentList
+{
+	std::string treatmentString;
+};
+
 enum class Department
 {
 	Surgery = 1,
@@ -29,18 +34,28 @@ private:
 	int age;
 	Department department;
 	std::string diagnosis;
-	Status status = Status::New;
+	Status status;
 	std::string dateOfAdmission;
-	std::vector<std::string> treatments;
+	std::vector<TreatmentList> treatments;
 
 public:
 	Patient() {}
 
-	Patient(int ID, std::string name, int age, Department department, std::string diagnosis, std::string dateOfAdmission) : ID(ID), name(name), age(age), department(department), diagnosis(diagnosis), dateOfAdmission(dateOfAdmission) {}
+	Patient(int ID, std::string name, int age, Department department, std::string diagnosis, Status status, std::string dateOfAdmission) : ID(ID), name(name), age(age), department(department), diagnosis(diagnosis), status(status), dateOfAdmission(dateOfAdmission) {}
 
 	int getID() const;
 
 	std::string getName() const;
 
 	int getAge() const;
+
+	Department getDepartment() const;
+
+	std::string getDiagnosis() const;
+
+	Status getStatus() const;
+
+	std::string getDateOfAdmission() const;
+
+	void showPatientINFO() const;
 };

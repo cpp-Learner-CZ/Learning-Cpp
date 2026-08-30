@@ -19,7 +19,9 @@ namespace addPatient {
 	int intDepartment;
 
 	void savePatient(std::vector<Patient>& patients) {
-		patients.emplace_back(addID, addName, addAge, addDepartment, addDiagnosis, addDateOfAdmission);
+		Status status = Status::New;
+
+		patients.emplace_back(addID, addName, addAge, addDepartment, addDiagnosis, status, addDateOfAdmission);
 		std::println("Patient added.");
 		logList.emplace_back(logs::logPatientAdded);
 	}
@@ -30,7 +32,7 @@ namespace addPatient {
 		std::println("Name: {}", addName);
 		std::println("Age: {}", addAge);
 		std::println("Department: {}", enumActions::departmentToString(addDepartment));
-		std::println("Diagnosis: ", addDiagnosis);
+		std::println("Diagnosis: {}", addDiagnosis);
 		std::println("Status: New");
 		std::println("Date of admission: {}", addDateOfAdmission);
 		std::println("------------------------------");
@@ -50,7 +52,6 @@ namespace addPatient {
 	}
 
 	void setDiagnosisAndDateOfAdmission(std::vector<Patient>& patients) {
-		// TODO: Error maybe \n in diagnosis
 		std::print("Diagnosis: ");
 		std::getline(std::cin >> std::ws, addDiagnosis);
 		std::print("Date of admission: ");
@@ -59,7 +60,7 @@ namespace addPatient {
 		consentAddPatient(patients);
 	}
 
-	void setDepartment(std::vector<Patient> patients) {
+	void setDepartment(std::vector<Patient>& patients) {
 		do {
 			std::println("\n== Set department ==");
 			std::println("1) Surgery");
@@ -96,7 +97,6 @@ namespace addPatient {
 			return;
 		}
 
-		// TODO: Error
 		if (verify::IDExist(addID, patients))
 		{
 			std::cerr << errors::duplicateID;
@@ -107,7 +107,6 @@ namespace addPatient {
 		std::print("Name: ");
 		std::getline(std::cin >> std::ws, addName);
 
-		// TODO: Error
 		if (verify::nameExist(addName, patients))
 		{
 			std::cerr << errors::nameAlredyExist;
@@ -126,5 +125,41 @@ namespace addPatient {
 		}
 
 		setDepartment(patients);
+	}
+}
+
+namespace editPatient {
+	int chooseEditID;
+
+	void lobby(std::vector<Patient>& patients) {
+		std::println("=== Edit patient ===");
+		std::print("ID: ");
+		writeInput::writeInt(chooseEditID, "ID");
+		if (!verify::IDExist(chooseEditID, patients))
+		{
+
+
+			return;
+		}
+
+
+		/*std::string name;
+		int age;
+		std::vector<TreatmentList> treatments;*/
+	}
+}
+
+void showPatients(std::vector<Patient>& patients) {
+	std::println("=== Show patients ===");
+	if (patients.size() == 0)
+	{
+		std::cerr << errors::patientsVectorEmpty;
+		return;
+	}
+
+	for (size_t i = 0; i < patients.size(); i++)
+	{
+		patients[i].showPatientINFO();
+		std::println("==============================\n");
 	}
 }

@@ -19,7 +19,7 @@ void mainSwitch(const int& switchChoose) {
 		break;
 
 	case 2:
-		std::println("This feature is not yet available.");
+		showPatients(patients);
 		break;
 
 	case 3:
@@ -87,6 +87,7 @@ int main()
 	{
 		std::println("\n==== Hospital management v{} ====", appVersion);
 		std::println("1) Add patient");
+		std::println("2) Show patients");
 		std::print("15) Exit\nChoose: ");
 		int choose;
 		writeInput::writeInt(choose, "Choose");

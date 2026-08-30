@@ -35,4 +35,24 @@ namespace enumActions {
 			return "Emergency";
 		}
 	}
+
+	std::string statusToString(const Status& showStatus) {
+		switch (showStatus)
+		{
+		case Status::New:
+			return "New";
+
+		case Status::Admitted:
+			return "Admitted";
+
+		case Status::Treatment:
+			return "Treatment";
+
+		case Status::Discharged:
+			return "Discharged";
+		
+		case Status::Critical:
+			return "Critical";
+		}
+	}
 }

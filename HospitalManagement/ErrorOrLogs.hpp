@@ -9,6 +9,7 @@ namespace errors {
 	inline const std::string ageIsZero = "Invalid age: Age cannot be zero.";
 	inline const std::string nameAlredyExist = "Invalid name: The name already exists.";
 	inline const std::string duplicateID = "Duplicate ID: This ID is already in use.";
+	inline const std::string patientsVectorEmpty = "No patients added yet: Click 'Add Patient' to get started.";
 }
 
 namespace logs {
