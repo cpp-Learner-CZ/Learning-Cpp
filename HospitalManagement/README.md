@@ -17,6 +17,7 @@
 
 - Add patient  
 - Show patients
+- Edit patient
 
 # How to run
 
@@ -33,3 +34,6 @@ Add 'Add patient' functionality (contains three unfixed errors)
 ***0.0.3***  
 Feature 'Add patient': Fixed three errors  
 Add 'Show patients' functionality  
+
+***0.0.4***  
+Add 'Edit patient' functionality

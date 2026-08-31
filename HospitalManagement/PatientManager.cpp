@@ -130,6 +130,55 @@ namespace addPatient {
 
 namespace editPatient {
 	int chooseEditID;
+	int index;
+	std::string editName;
+	int editAge;
+
+	void enterEditName(std::vector<Patient>& patients) {
+		std::print("Enter new name: ");
+		std::getline(std::cin >> std::ws, editName);
+
+		if (verify::nameExist(editName, patients))
+		{
+			std::cerr << errors::nameAlredyExist;
+			logList.emplace_back(logs::logNameAlredyExist);
+			return;
+		}
+
+		patients[index].setName(editName);
+		std::println("Name updated successfully.");
+		logList.emplace_back(logs::logEditNameCompleted);
+	}
+
+	void enterEditAge(std::vector<Patient>& patients) {
+		std::print("Enter new age: ");
+		writeInput::writeInt(editAge, "Enter new age");
+
+		patients[index].setAge(editAge);
+		std::println("Age updated successfully.");
+		logList.emplace_back(logs::logEditAgeCompleted);
+	}
+
+	void editSwitch(const int choose, std::vector<Patient>& patients) {
+		switch (choose)
+		{
+		case 1:
+			enterEditName(patients);
+			break;
+
+		case 2:
+			enterEditAge(patients);
+			break;
+
+		case 3:
+			break;
+
+		default:
+			std::cerr << errors::wrongNumber1to3;
+			logList.emplace_back(logs::logWrongNumber1to3);
+			break;
+		}
+	}
 
 	void lobby(std::vector<Patient>& patients) {
 		std::println("=== Edit patient ===");
@@ -137,15 +186,29 @@ namespace editPatient {
 		writeInput::writeInt(chooseEditID, "ID");
 		if (!verify::IDExist(chooseEditID, patients))
 		{
-
-
+			std::cerr << errors::IDdoesntFound;
+			logList.emplace_back(logs::logIDdoesntFound);
 			return;
 		}
 
+		std::println("=== Edit patient ===");
+		for (size_t i = 0; i < patients.size(); i++)
+		{
+			if (patients[i].getID() == chooseEditID)
+			{
+				index = i;
+				patients[i].showPatientINFO();
+				std::println(" - - - - - - - - - - - - - - -");
+				std::println("==============================");
+			}
+		}
+		std::println("1) Edit name");
+		std::println("2) Edit age");
+		std::print("3) Back\nEdit choose: ");
+		int choose;
+		writeInput::writeInt(choose, "Edit choose");
 
-		/*std::string name;
-		int age;
-		std::vector<TreatmentList> treatments;*/
+		editSwitch(choose, patients);
 	}
 }
 

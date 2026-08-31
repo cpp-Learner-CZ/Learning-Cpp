@@ -12,7 +12,7 @@ namespace writeInput {
 		{
 			std::cerr << errors::wrongNumber;
 			logList.emplace_back(logs::logWrongNumber);
-			std::print("\n{}:", message);
+			std::print("\n{}: ", message);
 
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -44,6 +44,17 @@ namespace verify {
 		for (size_t i = 0; i < patients.size(); i++)
 		{
 			if (checkName == patients[i].getName())
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	bool ageExist(const int checkAge, std::vector<Patient>& patients) {
+		for (size_t i = 0; i < patients.size(); i++)
+		{
+			if (checkAge == patients[i].getAge())
 			{
 				return true;
 			}

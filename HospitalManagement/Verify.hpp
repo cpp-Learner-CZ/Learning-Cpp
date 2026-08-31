@@ -12,5 +12,7 @@ namespace verify {
 
 	bool nameExist(const std::string& checkName, std::vector<Patient>& patients);
 
+	bool ageExist(const int checkAge, std::vector<Patient>& patients);
+
 	bool departmentValidInt1To4(const int& intValid);
 }

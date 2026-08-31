@@ -14,8 +14,16 @@ std::string Patient::getName() const {
 	return this->name;
 }
 
+void Patient::setName(const std::string& name) {
+	this->name = name;
+}
+
 int Patient::getAge() const {
 	return this->age;
+}
+
+void Patient::setAge(const int age) {
+	this->age = age;
 }
 
 Department Patient::getDepartment() const {
