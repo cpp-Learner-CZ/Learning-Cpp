@@ -28,4 +28,6 @@ namespace logs {
 	inline const std::string logPatientAdded = "[INFO] The patient has been added.";
 	inline const std::string logEditNameCompleted = "[INFO] Name updated successfully.";
 	inline const std::string logEditAgeCompleted = "[INFO] Age updated successfully.";
+	inline const std::string logPatientRemovalCanceled = "[INFO] Patient removal was canceled.";
+	inline const std::string logPatientRemoved = "[INFO] Patient was removed.";
 }

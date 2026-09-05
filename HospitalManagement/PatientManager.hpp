@@ -11,4 +11,8 @@ namespace editPatient {
 	void lobby(std::vector<Patient>& patients);
 }
 
+namespace removePatient {
+	void lobby(std::vector<Patient>& patients);
+}
+
 void showPatients(std::vector<Patient>& patients);

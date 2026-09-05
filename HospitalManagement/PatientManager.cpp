@@ -212,6 +212,58 @@ namespace editPatient {
 	}
 }
 
+namespace removePatient {
+	int remID;
+	int patientIndex;
+
+	void patientRem(std::vector<Patient>& patients) {
+		patients.erase(patients.begin() + patientIndex);
+		std::println("Patient was removed.");
+		logList.emplace_back(logs::logPatientRemoved);
+	}
+
+	void showInfoPatientAndConsent(std::vector<Patient>& patients) {
+		for (size_t i = 0; i < patients.size(); i++)
+		{
+			if (patients[i].getID() == remID)
+			{
+				patients[i].showPatientINFO();
+				patientIndex = i;
+			}
+		}
+		std::println("Are you sure you want to remove the current patient?");
+		std::println("Write y or n");
+		std::print("Consent: ");
+		std::string stringConsent;
+		std::getline(std::cin >> std::ws, stringConsent);
+
+		bool boolConsent = (stringConsent == "y" || stringConsent == "Y");
+		if (!boolConsent)
+		{
+			std::println("Patient removal was canceled.");
+			logList.emplace_back(logs::logPatientRemovalCanceled);
+			return;
+		}
+
+		patientRem(patients);
+	}
+
+	void lobby(std::vector<Patient>& patients) {
+		std::println("=== Remove patient ===");
+		std::print("Patient ID: ");
+		writeInput::writeInt(remID, "Patient ID");
+
+		if (!verify::IDExist(remID, patients))
+		{
+			std::cerr << errors::IDdoesntFound;
+			logList.emplace_back(logs::logIDdoesntFound);
+			return;
+		}
+
+		showInfoPatientAndConsent(patients);
+	}
+}
+
 void showPatients(std::vector<Patient>& patients) {
 	std::println("=== Show patients ===");
 	if (patients.size() == 0)
