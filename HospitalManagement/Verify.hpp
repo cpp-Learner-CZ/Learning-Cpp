@@ -8,9 +8,9 @@ namespace writeInput {
 namespace verify {
 	bool intEqualZero(const int integer);
 
-	bool IDExist(const int checkID, std::vector<Patient>& patients);
+	bool IDExist(const int checkID, const std::vector<Patient>& patients);
 
-	bool nameExist(const std::string& checkName, std::vector<Patient>& patients);
+	bool nameExist(const std::string& checkName, const std::vector<Patient>& patients);
 
 	bool ageExist(const int checkAge, std::vector<Patient>& patients);
 

@@ -15,4 +15,8 @@ namespace removePatient {
 	void lobby(std::vector<Patient>& patients);
 }
 
+namespace searchPatient {
+	void lobby(const std::vector<Patient>& patients);
+}
+
 void showPatients(std::vector<Patient>& patients);

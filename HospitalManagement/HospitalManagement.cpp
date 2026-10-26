@@ -31,7 +31,7 @@ void mainSwitch(const int& switchChoose) {
 		break;
 
 	case 5:
-		std::println("This feature is not yet available.");
+		searchPatient::lobby(patients);
 		break;
 
 	case 6:
@@ -90,6 +90,7 @@ int main()
 		std::println("2) Show patients");
 		std::println("3) Edit patient");
 		std::println("4) Remove patient");
+		std::println("5) Search patient");
 		std::print("15) Exit\nChoose: ");
 		int choose;
 		writeInput::writeInt(choose, "Choose");

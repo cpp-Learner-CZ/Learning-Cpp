@@ -264,6 +264,92 @@ namespace removePatient {
 	}
 }
 
+namespace searchPatient {
+	int IDSearch;
+	std::string nameSearch;
+
+	void searchID(const std::vector<Patient>& patients) {
+		std::println("== Search by ID ==");
+		std::print("ID: ");
+		writeInput::writeInt(IDSearch, "ID");
+
+		if (verify::intEqualZero(IDSearch))
+		{
+			std::cerr << errors::IDIsZero;
+			logList.emplace_back(logs::logIDIsZero);
+			return;
+		}
+
+		if (!verify::IDExist(IDSearch, patients))
+		{
+			std::cerr << errors::IDdoesntFound;
+			logList.emplace_back(logs::logIDdoesntFound);
+			return;
+		}
+
+		for (size_t i = 0; i < patients.size(); i++)
+		{
+			if (patients[i].getID() == IDSearch)
+			{
+				patients[i].showPatientINFO();
+			}
+		}
+	}
+
+	void searchName(const std::vector<Patient>& patients) {
+		std::println("== Search by name ==");
+		std::print("Name: ");
+		std::getline(std::cin >> std::ws, nameSearch);
+
+		if (!verify::nameExist(nameSearch, patients))
+		{
+			std::cerr << errors::nameDoesntExist;
+			logList.emplace_back(logs::logNameDoesntExist);
+			return;
+		}
+
+		for (size_t i = 0; i < patients.size(); i++)
+		{
+			if (patients[i].getName() == nameSearch)
+			{
+				patients[i].showPatientINFO();
+			}
+		}
+	}
+
+	void searchSwitch(const std::vector<Patient>& patients, const int choose) {
+		switch (choose)
+		{
+		case 1:
+			searchID(patients);
+			break;
+
+		case 2:
+			searchName(patients);
+			break;
+
+		case 3:
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	void lobby(const std::vector<Patient>& patients) {
+		int chooseSearchPatient;
+		do {
+			std::println("=== Search patient ===");
+			std::println("1) By ID");
+			std::println("2) By name");
+			std::print("3) Back\nSearch: ");
+			writeInput::writeInt(chooseSearchPatient, "Search");
+		} while (chooseSearchPatient == 0 || chooseSearchPatient > 3);
+
+		searchSwitch(patients, chooseSearchPatient);
+	}
+}
+
 void showPatients(std::vector<Patient>& patients) {
 	std::println("=== Show patients ===");
 	if (patients.size() == 0)

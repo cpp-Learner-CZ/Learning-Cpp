@@ -1,4 +1,4 @@
 #pragma once
 #include <string>
 
-inline const std::string appVersion = "0.1.0";
+inline const std::string appVersion = "0.1.1";
