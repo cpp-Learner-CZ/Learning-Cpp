@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EnumOperation.cpp" />
+    <ClCompile Include="Filter.cpp" />
     <ClCompile Include="HospitalManagement.cpp" />
     <ClCompile Include="Patient.cpp" />
     <ClCompile Include="PatientManager.cpp" />
@@ -148,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="EnumOperation.hpp" />
     <ClInclude Include="ErrorOrLogs.hpp" />
+    <ClInclude Include="Filter.hpp" />
     <ClInclude Include="Patient.hpp" />
     <ClInclude Include="PatientManager.hpp" />
     <ClInclude Include="Verify.hpp" />

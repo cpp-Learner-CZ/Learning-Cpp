@@ -6,6 +6,7 @@
 #include "Verify.hpp"
 #include "ErrorOrLogs.hpp"
 #include "PatientManager.hpp"
+#include "Filter.hpp"
 
 std::vector<Patient> patients;
 
@@ -35,7 +36,7 @@ void mainSwitch(const int& switchChoose) {
 		break;
 
 	case 6:
-		std::println("This feature is not yet available.");
+		filter::filterLobby(patients);
 		break;
 
 	case 7:
@@ -91,6 +92,7 @@ int main()
 		std::println("3) Edit patient");
 		std::println("4) Remove patient");
 		std::println("5) Search patient");
+		std::println("6) Filter patients");
 		std::print("15) Exit\nChoose: ");
 		int choose;
 		writeInput::writeInt(choose, "Choose");

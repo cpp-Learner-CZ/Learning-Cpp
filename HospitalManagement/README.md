@@ -20,6 +20,7 @@
 - Edit patient
 - Remove patient
 - Search patient
+- Filter patients
 
 # How to run
 
@@ -45,3 +46,6 @@ Add 'Remove patient' functionality
 
 ***0.1.1***  
 Add 'Search patient' functionality  
+
+***0.1.2***  
+Add 'Filter patients' functionality
